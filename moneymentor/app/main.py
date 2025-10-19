@@ -18,7 +18,7 @@ from pydantic import BaseModel, Field
 # Import local modules
 from rag_pipeline import get_finance_answer, load_knowledge
 from data_loader import DataLoader
-from agents import run_calculation_query
+from agents import run_calculation_query, run_agent_query
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -80,7 +80,8 @@ class ChatResponse(BaseModel):
     sources: list
     query: str
     model: str
-    tool: str = "rag"  # "calculator" or "rag"
+    tool: str = "rag"  # "calculator", "rag", "agent_tool", or tool name
+    agent: bool = False  # True if agent orchestrator was used
 
 
 class ReloadResponse(BaseModel):
@@ -111,14 +112,14 @@ async def chat(request: ChatRequest):
     Ask a financial question and get an AI-powered answer.
     
     This endpoint uses intelligent routing to:
-    1. Detect calculation queries → Financial Calculator Agent
-    2. General questions → RAG (Retrieval-Augmented Generation) pipeline
+    1. Detect dynamic queries (today, current, calculate, invest, etc.) → Agent Orchestrator
+    2. General/educational questions → RAG (Retrieval-Augmented Generation) pipeline
     
     Args:
         request: ChatRequest with user's question
         
     Returns:
-        ChatResponse with answer, sources, and tool used
+        ChatResponse with answer, sources, tool used, and agent flag
         
     Example:
         POST /api/chat
@@ -130,49 +131,92 @@ async def chat(request: ChatRequest):
     try:
         logger.info(f"Received chat request: '{request.question}'")
         
-        # Intent detection: Check if this is a calculation query
+        # Intent detection: Check for dynamic/calculation/current info keywords
         question_lower = request.question.lower()
-        calculation_keywords = [
-            "invest", "investing", "monthly", "per month", 
-            "compound", "annuity", "save", "saving",
-            "how much will i have", "future value", "per year"
+        agent_keywords = [
+            "today", "current", "rate", "trend", "market",
+            "calculate", "invest $", "invest ", "grow my",
+            "how much will i have", "future value", 
+            "per month at", "monthly at", "per year at"
         ]
         
-        is_calculation = any(keyword in question_lower for keyword in calculation_keywords)
+        # Check if query contains agent-triggering keywords
+        should_use_agent = any(keyword in question_lower for keyword in agent_keywords)
         
         # Route to appropriate tool
-        if is_calculation:
-            logger.info("🧮 Routing to calculator agent")
+        if should_use_agent:
+            print("🧠 Routed to Agent")
+            logger.info("🧠 Routing to Agent Orchestrator")
             
-            # Try calculator agent first
-            calc_result = run_calculation_query(request.question)
+            # Use agent orchestrator for intelligent tool selection
+            agent_result = run_agent_query(request.question, verbose=False)
             
-            if calc_result['success']:
-                # Calculator succeeded - return formatted result with MoneyMentor branding
-                answer_with_branding = (
-                    f"💰 **MoneyMentor Calculator**\n\n"
-                    f"{calc_result['explanation']}"
-                )
-                
-                logger.info(f"✅ Calculator agent successful: ${calc_result['result']:,.2f}")
-                
-                return ChatResponse(
-                    answer=answer_with_branding,
-                    sources=[{
-                        'source': 'financial_calculator',
-                        'text': f"Calculated with parameters: {calc_result['parameters']}",
+            # Extract results from agent
+            answer = agent_result.get("answer", "No answer generated.")
+            tool_used = agent_result.get("tool_used", "unknown")
+            
+            # Format sources from intermediate steps if available
+            sources = []
+            if agent_result.get("intermediate_steps") and len(agent_result["intermediate_steps"]) > 0:
+                for step in agent_result["intermediate_steps"]:
+                    tool_name = step.get('tool', 'agent')
+                    # Map tool names to user-friendly names
+                    display_name = {
+                        'tavily_search_tool': 'Tavily Web Search',
+                        'finance_calculator_tool': 'Financial Calculator',
+                        'rag_tool': 'Knowledge Base'
+                    }.get(tool_name, tool_name)
+                    
+                    sources.append({
+                        'source': display_name,
+                        'text': step.get('output', '')[:200],
                         'relevance_score': 1.0
-                    }],
-                    query=request.question,
-                    model='calculator_agent',
-                    tool='calculator'
-                )
+                    })
             else:
-                # Calculator couldn't parse - fall back to RAG
-                logger.info("⚠️  Calculator parsing failed, falling back to RAG")
+                # Infer sources from tool_used (which may contain multiple tools)
+                # Map tool names to user-friendly names
+                tool_mapping = {
+                    'rag_tool': ('Knowledge Base', 'Retrieved from financial education documents'),
+                    'tavily_search_tool': ('Tavily Web Search', 'Live web search results'),
+                    'finance_calculator_tool': ('Financial Calculator', 'Calculated using compound interest formulas')
+                }
+                
+                sources = []
+                # Handle multiple tools (comma-separated)
+                tool_list = [t.strip() for t in tool_used.split(',')]
+                
+                for tool in tool_list:
+                    if tool in tool_mapping:
+                        display_name, source_text = tool_mapping[tool]
+                        sources.append({
+                            'source': display_name,
+                            'text': source_text,
+                            'relevance_score': 1.0
+                        })
+                
+                # Fallback if no recognized tools
+                if not sources:
+                    sources = [{
+                        'source': 'AI Agent',
+                        'text': 'Generated by agent orchestrator',
+                        'relevance_score': 1.0
+                    }]
+            
+            logger.info(f"✅ Agent completed with tool: {tool_used}")
+            
+            return ChatResponse(
+                answer=answer,
+                sources=sources,
+                query=request.question,
+                model='gpt-4o-mini',
+                tool=tool_used if tool_used != "none" else "agent_tool",
+                agent=True
+            )
         
-        # Default: Use RAG pipeline
+        # Default: Use RAG pipeline for educational/general questions
+        print("📚 Routed to RAG")
         logger.info("📚 Routing to RAG pipeline")
+        
         result = get_finance_answer(
             query=request.question,
             k=request.k
@@ -184,8 +228,9 @@ async def chat(request: ChatRequest):
             answer=result["answer"],
             sources=result.get("sources", []),
             query=result.get("query", request.question),
-            model=result.get("model", "gpt-4"),
-            tool='rag'
+            model=result.get("model", "gpt-4o-mini"),
+            tool='rag',
+            agent=False
         )
         
     except Exception as e:

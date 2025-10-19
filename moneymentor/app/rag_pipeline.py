@@ -43,7 +43,7 @@ VECTOR_SIZE = 1536  # OpenAI text-embedding-3-small dimension
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 100
 EMBEDDING_MODEL = "text-embedding-3-small"
-CHAT_MODEL = "gpt-4"
+CHAT_MODEL = "gpt-4o-mini"  # Fast and cost-effective model
 
 
 def load_knowledge(
@@ -248,15 +248,38 @@ def load_knowledge(
         
         logger.info(f"✅ Generated {len(points)} embedding vector(s)")
         
-        # Upsert to Qdrant
+        # Upsert to Qdrant in batches to avoid timeouts
         logger.info(f"\n💾 Upserting {len(points)} vector(s) to Qdrant...")
-        if not upsert_points(collection_name, points):
+        upsert_batch_size = 100  # Batch size for upsert operations
+        vectors_indexed = 0
+        
+        for i in range(0, len(points), upsert_batch_size):
+            batch = points[i:i + upsert_batch_size]
+            batch_num = (i // upsert_batch_size) + 1
+            total_batches = (len(points) + upsert_batch_size - 1) // upsert_batch_size
+            
+            logger.info(f"   Upserting batch {batch_num}/{total_batches} ({len(batch)} vectors)...")
+            
+            if not upsert_points(collection_name, batch):
+                logger.error(f"   ❌ Failed to upsert batch {batch_num}")
+                return {
+                    "success": False,
+                    "error": f"Failed to upsert vectors at batch {batch_num}",
+                    "documents_processed": documents_processed,
+                    "chunks_created": len(all_chunks),
+                    "vectors_indexed": vectors_indexed
+                }
+            
+            vectors_indexed += len(batch)
+            logger.info(f"   ✅ Batch {batch_num} complete ({vectors_indexed}/{len(points)} total)")
+        
+        if vectors_indexed != len(points):
             return {
                 "success": False,
-                "error": "Failed to upsert vectors",
+                "error": "Incomplete upsert",
                 "documents_processed": documents_processed,
                 "chunks_created": len(all_chunks),
-                "vectors_indexed": 0
+                "vectors_indexed": vectors_indexed
             }
         
         logger.info("")
@@ -265,7 +288,7 @@ def load_knowledge(
         logger.info("=" * 60)
         logger.info(f"📊 Documents processed: {documents_processed}")
         logger.info(f"📊 Chunks created: {len(all_chunks)}")
-        logger.info(f"📊 Vectors indexed: {len(points)}")
+        logger.info(f"📊 Vectors indexed: {vectors_indexed}")
         logger.info(f"📊 Collection: {collection_name}")
         logger.info("=" * 60)
         
@@ -273,7 +296,7 @@ def load_knowledge(
             "success": True,
             "documents_processed": documents_processed,
             "chunks_created": len(all_chunks),
-            "vectors_indexed": len(points),
+            "vectors_indexed": vectors_indexed,
             "collection_name": collection_name
         }
         
@@ -302,7 +325,7 @@ def get_finance_answer(
     1. Generate embedding for user query
     2. Search Qdrant for k most similar document chunks
     3. Build context from retrieved chunks
-    4. Generate answer using GPT-4 with context
+    4. Generate answer using GPT-4o-mini with context
     
     Args:
         query: User's financial question
@@ -374,7 +397,7 @@ def get_finance_answer(
         context = "\n\n---\n\n".join(context_chunks)
         
         # Create prompt with context
-        logger.info("💬 Generating answer with GPT-4...")
+        logger.info("💬 Generating answer with GPT-4o-mini...")
         
         prompt = ChatPromptTemplate.from_messages([
             ("system", """You are MoneyMentor, a knowledgeable and friendly financial advisor assistant. 
