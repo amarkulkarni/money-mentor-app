@@ -1,6 +1,7 @@
 {
-  "timestamp": "2025-10-19T10:40:19.615936",
+  "timestamp": "2025-10-19T14:36:01.033952",
   "test_set": "evaluation/golden_set.jsonl",
+  "mode": "advanced",
   "total_queries": 15,
   "successful": 15,
   "failed": 0,
@@ -14,44 +15,58 @@
     {
       "query": "What is compound interest?",
       "expected_answer": "Interest calculated on both the principal amount and the accumulated interest from previous periods, leading to exponential growth over time.",
-      "actual_answer": "Compound interest is the interest on a loan or deposit that is calculated based on both the initial principal amount and the accumulated interest from previous periods. In simpler terms, it\u2019s \"interest on interest.\"\n\nHere's how it works:\n\n1. **Initial Investment**: Imagine you start with $1,000 and earn 5% interest in the first year. You would earn $50 in interest, bringing your total to $1,050.\n\n2. **Next Year\u2019s Interest**: In the second year, you earn interest not just on your original $1,000, but on the new total of $1,050. So, 5% of $1,050 gives you $52.50 in interest. Now your total is $1,102.50.\n\n3. **Continued Growth**: If you keep your money invested, the next year you will earn interest on $1,102.50, which would be $55.12. Over time, this means your money grows faster because you\u2019re earning interest on the interest you previously earned.\n\nThis process of earning interest on both the principal and accumulated interest is what makes compound interest so powerful, especially when you give it time to work for you. The longer you invest, the more significant the effect of compounding becomes, much like a snowball rolling downhill that grows larger as it goes! \n\nStarting to save early and regularly can greatly enhance the benefits of compound interest.",
+      "actual_answer": "Compound interest is a method of calculating interest where you earn interest not only on your initial principal amount (the money you originally invested or saved) but also on the interest that accumulates over time. This means that as time goes on, your money can grow faster because you're essentially earning \"interest on your interest.\"\n\nHere's a simple example to illustrate how it works:\n\n1. **Initial Investment**: Imagine you save $1,000 in a bank account that earns 5% interest per year.\n2. **First Year**: After one year, you earn $50 in interest (5% of $1,000), bringing your total to $1,050.\n3. **Second Year**: In the second year, you earn interest on the new total of $1,050. So, at 5%, you earn $52.50 in interest (5% of $1,050), which makes your new total $1,102.50.\n4. **Third Year**: If you continue this for a third year, you'll earn interest on $1,102.50, which comes to approximately $55.12, making your total about $1,157.62.\n\nAs you can see, each year your interest grows because you're earning interest on both your original investment and the interest that has accumulated. This \"magic of compounding\" can significantly increase your savings over time, especially if you start early and continue to add to your savings.\n\nTo sum it up, the earlier you start saving and the longer you let your money grow, the more you can benefit from compound interest!",
       "contexts": [
         "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
+        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
         "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ...",
         "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
-        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
-        "the rate of interest. \nThe total cost will also be affected by how long it takes you to \npay back a loan. The longer it takes you to pay back money you \nborrow, the more you will pay in interest. As a..."
+        "the rate of interest. \nThe total cost will also be affected by how long it takes you to \npay back a loan. The longer it takes you to pay back money you \nborrow, the more you will pay in interest. As a...",
+        "basis, then maybe a card with greater rewards is best, even though its interest rate is higher. \nCompare your options and determine which credit card features makes the most sense for you. \n \nPrincipa...",
+        "these differences exist? Are there \ndifferent interest rates for different \nkinds of loans?\nLearn About\nLearn About\nYou may also lend money to a company or gov-\nernment by buying \u201cbonds\u201d that they iss..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 544,
-          "score": 0.5086896,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 543,
-          "score": 0.5016574,
-          "text": "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ..."
-        },
-        {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 87,
-          "score": 0.4577508,
-          "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 482,
-          "score": 0.44963938,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 481,
-          "score": 0.4215936,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "the rate of interest. \nThe total cost will also be affected by how long it takes you to \npay back a loan. The longer it takes you to pay back money you \nborrow, the more you will pay in interest. As a..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "basis, then maybe a card with greater rewards is best, even though its interest rate is higher. \nCompare your options and determine which credit card features makes the most sense for you. \n \nPrincipa..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "these differences exist? Are there \ndifferent interest rates for different \nkinds of loans?\nLearn About\nLearn About\nYou may also lend money to a company or gov-\nernment by buying \u201cbonds\u201d that they iss..."
         }
       ],
       "metrics": {
@@ -64,44 +79,86 @@
     {
       "query": "What is the 50/30/20 budgeting rule?",
       "expected_answer": "A budgeting guideline where 50% of income goes to needs, 30% to wants, and 20% to savings and debt repayment.",
-      "actual_answer": "The 50/30/20 budgeting rule is a simple guideline to help you allocate your after-tax income effectively. It divides your income into three main categories:\n\n1. **50% Needs**: This portion is for your essential expenses, such as housing, utilities, groceries, transportation, and healthcare. These are the things you must have to live.\n\n2. **30% Wants**: This category includes your discretionary spending, which covers non-essential items like dining out, entertainment, hobbies, and vacations\u2014things that enhance your lifestyle but are not strictly necessary.\n\n3. **20% Savings**: This part is dedicated to savings and debt repayment. It includes contributions to your emergency fund, retirement accounts, and any extra payments on loans or credit card debts.\n\n**Example**: If your monthly take-home pay is $3,000, according to the 50/30/20 rule, you would allocate:\n- $1,500 (50%) for needs,\n- $900 (30%) for wants, and\n- $600 (20%) for savings.\n\nThis budgeting method is a practical way to ensure you are covering your essentials while also allowing yourself some flexibility for enjoyment and future financial stability. It\u2019s important to adjust these percentages based on your personal financial situation, lifestyle, and goals.",
+      "actual_answer": "The 50/30/20 budgeting rule is a simple and effective guideline for managing your finances. It suggests dividing your after-tax income into three main categories:\n\n1. **50% for Needs**: This portion covers your essential living expenses, such as housing (rent or mortgage), utilities, groceries, healthcare, transportation, and other necessary costs. These are the expenses you must pay to maintain your basic standard of living.\n\n2. **30% for Wants**: This category includes discretionary spending\u2014things that you desire but don't necessarily need. This can cover entertainment, dining out, hobbies, vacations, and any other non-essential items or services. It's important to enjoy life, but keeping this to 30% helps ensure you're not overspending.\n\n3. **20% for Savings and Debt Repayment**: The final portion should be allocated to savings and paying off debt. This could include contributions to retirement accounts, emergency funds, or paying down credit cards and loans. Prioritizing savings is crucial for financial stability and future goals.\n\n**Example**: If you have a monthly income of $3,000 after taxes:\n- $1,500 (50%) would go toward needs.\n- $900 (30%) would go toward wants.\n- $600 (20%) would go toward savings and debt repayment.\n\nUsing this rule can help you create a balanced budget while ensuring you are meeting your essential needs, enjoying some of your income, and preparing for your financial future. Remember, the percentages can be adjusted based on your personal circumstances, but this framework provides a solid starting point.",
       "contexts": [
         "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b...",
-        "$ \nOther: \n$ \nOther: \n$ \nEDUCATION \nTuition \n$ \nBooks \n$ \nProfessional Development \n$ \nOther: \n$ \n \nTOTAL FLEXIBLE EXPENSES (D) = \n(add all monthly flexible expense amounts) \n \n$ \n \nCalculate and Adju...",
-        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ...",
         "9 \nStaying on Budget \n \nMaking a budget is easy; sticking to that budget is where the real challenge lies. Here are a few \nthings to consider that will help you be successful with your budget: \n1. Be ...",
-        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 4 \nCASH FLOW CHART: FOR WHEN YOU HAVE TO LIVE CHECK - TO - CHECK \nList each pay date and which monthly expenses you\u2019ll use that check for. Y..."
+        "Components of a Budget ......................................................................................................................... 4 \nCreating a Successful Budget ..........................",
+        "to keep track of where your money is going and to \nmake sure your money is being used wisely.\n2. Fixed Costs: the costs that come up on a regular \nbasis that you have to pay each month.\n3. Irregular C...",
+        "Your income will change. Keep your budget \ufb02exible so that it can \nchange with you. \n\u2022 Keep your budget simple. Nothing will turn you off budgeting more \nquickly than if you make it complicated and a l...",
+        "If you can, use your budget to pay yourself \ufb01rst. If you pay yourself last, \nit often ends up that there is nothing left. Put some of your money in \nsavings when you get it and budget how you will use...",
+        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 4 \nCASH FLOW CHART: FOR WHEN YOU HAVE TO LIVE CHECK - TO - CHECK \nList each pay date and which monthly expenses you\u2019ll use that check for. Y...",
+        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ...",
+        "identi\ufb01ed above?\nHow About You?\nNext, before you add up how much you have spent \non each category, write down the percentage of \nyour money you think you spend on each category.\nThen add up how much m...",
+        "Now it\u2019s time to consider your FLEXIBLE EXPENSES. Reminder: these are the expenses that \nchange month to month. They often represent the things that you want, but don\u2019t necessarily \nneed. We must budg...",
+        "\u201ctrack your expenses.\u201d And that isn\u2019t hard today with \nhow easy it is to carry a little notebook or use the \nnote pad on a cell phone or other hand-held device. \nAll that you have to do is, over a mon..."
       ],
       "sources": [
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 23,
-          "score": 0.50123745,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b..."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 21,
-          "score": 0.48010787,
-          "text": "$ \nOther: \n$ \nOther: \n$ \nEDUCATION \nTuition \n$ \nBooks \n$ \nProfessional Development \n$ \nOther: \n$ \n \nTOTAL FLEXIBLE EXPENSES (D) = \n(add all monthly flexible expense amounts) \n \n$ \n \nCalculate and Adju..."
-        },
-        {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 19,
-          "score": 0.46770507,
-          "text": "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ..."
-        },
-        {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 22,
-          "score": 0.4590013,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "9 \nStaying on Budget \n \nMaking a budget is easy; sticking to that budget is where the real challenge lies. Here are a few \nthings to consider that will help you be successful with your budget: \n1. Be ..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 18,
-          "score": 0.45798552,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Components of a Budget ......................................................................................................................... 4 \nCreating a Successful Budget .........................."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "to keep track of where your money is going and to \nmake sure your money is being used wisely.\n2. Fixed Costs: the costs that come up on a regular \nbasis that you have to pay each month.\n3. Irregular C..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Your income will change. Keep your budget \ufb02exible so that it can \nchange with you. \n\u2022 Keep your budget simple. Nothing will turn you off budgeting more \nquickly than if you make it complicated and a l..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "If you can, use your budget to pay yourself \ufb01rst. If you pay yourself last, \nit often ends up that there is nothing left. Put some of your money in \nsavings when you get it and budget how you will use..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 4 \nCASH FLOW CHART: FOR WHEN YOU HAVE TO LIVE CHECK - TO - CHECK \nList each pay date and which monthly expenses you\u2019ll use that check for. Y..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "identi\ufb01ed above?\nHow About You?\nNext, before you add up how much you have spent \non each category, write down the percentage of \nyour money you think you spend on each category.\nThen add up how much m..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Now it\u2019s time to consider your FLEXIBLE EXPENSES. Reminder: these are the expenses that \nchange month to month. They often represent the things that you want, but don\u2019t necessarily \nneed. We must budg..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\u201ctrack your expenses.\u201d And that isn\u2019t hard today with \nhow easy it is to carry a little notebook or use the \nnote pad on a cell phone or other hand-held device. \nAll that you have to do is, over a mon..."
         }
       ],
       "metrics": {
@@ -114,44 +171,58 @@
     {
       "query": "Why do I need an emergency fund?",
       "expected_answer": "An emergency fund provides financial security by covering 3-6 months of expenses for unexpected events like job loss, medical emergencies, or urgent repairs.",
-      "actual_answer": "An emergency fund is essential for several reasons:\n\n1. **Financial Security**: Having an emergency fund provides a safety net that helps you feel secure in your financial situation. It allows you to handle unexpected expenses, such as medical emergencies, car repairs, or sudden job loss, without derailing your finances.\n\n2. **Avoiding Debt**: When unexpected costs arise, having an emergency fund means you won't have to rely on credit cards or loans that can lead to debt. This helps you maintain your financial health and avoid high-interest payments.\n\n3. **Peace of Mind**: Knowing that you have money set aside for emergencies can reduce stress and anxiety. It allows you to focus on your long-term financial goals instead of constantly worrying about what might happen if an unexpected expense arises.\n\n4. **Flexibility**: With an emergency fund, you can handle life\u2019s surprises without compromising your budget. Whether it's taking time off work for a family emergency or paying for a necessary home repair, an emergency fund gives you the flexibility to manage these situations effectively.\n\nMost experts recommend saving 3 to 6 months' worth of essential expenses, but if that seems overwhelming, you can start with a smaller goal, like $500, and build from there. It\u2019s all about creating a buffer that works for you!",
+      "actual_answer": "An emergency fund is essential for several reasons:\n\n1. **Financial Security**: Life is unpredictable, and unexpected expenses can arise at any time, such as medical emergencies, car repairs, or job loss. An emergency fund provides a financial safety net, ensuring that you can cover these costs without going into debt or disrupting your financial plans.\n\n2. **Peace of Mind**: Having an emergency fund allows you to feel more secure and less stressed about your finances. Knowing you have money set aside for emergencies can give you the confidence to handle unexpected situations more calmly.\n\n3. **Avoiding Debt**: When emergencies occur, having an emergency fund can prevent you from relying on credit cards or loans, which can lead to high-interest debt. Instead, you can use your savings to cover the costs directly.\n\n4. **Protecting Your Savings**: An emergency fund helps to shield your other savings (like those meant for vacations or big purchases) from being depleted in times of crisis. This way, your savings can remain intact for their intended purposes.\n\n5. **Building Good Financial Habits**: Establishing an emergency fund encourages you to prioritize saving and budgeting, laying the groundwork for better financial management in the future.\n\nMost experts recommend having at least three to six months' worth of essential expenses saved in your emergency fund. If this seems overwhelming, start with a smaller goal, like $500, and gradually build from there. Remember, the key is to have accessible funds that you can rely on during unexpected situations.",
       "contexts": [
-        "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it...",
-        "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b...",
         "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi...",
+        "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it...",
         "There are THREE SIMPLE STEPS to help you start saving: \n1) ESTABLISH AND EMERGENCY FUND. In doing so, you\u2019re protecting your soon-to-be \nsavings from being tapped into if an emergency or unexpected co...",
-        "manage your money, PrimeBank o\ufb00ers tools and guidance to help you move forward. We \nsupport your goals with services that are clear, competitive, and community-driven.\nYou can also download free resou..."
+        "manage your money, PrimeBank o\ufb00ers tools and guidance to help you move forward. We \nsupport your goals with services that are clear, competitive, and community-driven.\nYou can also download free resou...",
+        "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b...",
+        "included on this sheet for your reference. \n \n \n \n6 \nSTEP 3: SAVINGS CONTRIBUTIONS \nDetermining and prioritizing how much you want to save towards your financial goals is the key \nto meeting those goa...",
+        "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything..."
       ],
       "sources": [
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 16,
-          "score": 0.549698,
-          "text": "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it..."
-        },
-        {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 23,
-          "score": 0.51531774,
-          "text": "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b..."
-        },
-        {
-          "source": "financialliteracy101.txt",
-          "chunk_id": 18,
-          "score": 0.47354984,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi..."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 55,
-          "score": 0.46808746,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "There are THREE SIMPLE STEPS to help you start saving: \n1) ESTABLISH AND EMERGENCY FUND. In doing so, you\u2019re protecting your soon-to-be \nsavings from being tapped into if an emergency or unexpected co..."
         },
         {
-          "source": "financialliteracy101.txt",
-          "chunk_id": 17,
-          "score": 0.4336019,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "manage your money, PrimeBank o\ufb00ers tools and guidance to help you move forward. We \nsupport your goals with services that are clear, competitive, and community-driven.\nYou can also download free resou..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "included on this sheet for your reference. \n \n \n \n6 \nSTEP 3: SAVINGS CONTRIBUTIONS \nDetermining and prioritizing how much you want to save towards your financial goals is the key \nto meeting those goa..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything..."
         }
       ],
       "metrics": {
@@ -164,44 +235,93 @@
     {
       "query": "What is the difference between saving and investing?",
       "expected_answer": "Saving is setting aside money in low-risk accounts for short-term goals and emergencies, while investing involves putting money into assets like stocks or bonds for long-term growth with higher risk and potential returns.",
-      "actual_answer": "Great question! Understanding the difference between saving and investing is essential for managing your finances effectively.\n\n**Saving** is primarily about setting aside money for future use, usually in a secure place like a savings account. The main goal of saving is to have funds available for short-term needs or emergencies. For instance, if you save $500 in a savings account, it will remain relatively safe, and you might earn a small amount of interest over time. Saving is typically low-risk, and your focus is on preserving the value of your money.\n\n**Investing**, on the other hand, involves using your savings to purchase assets or financial instruments (like stocks, bonds, or real estate) with the expectation that they will grow in value over time. Investing is generally aimed at achieving long-term financial goals, such as retirement or buying a home. While investing has the potential for higher returns compared to saving, it also comes with higher risks. The value of your investments can fluctuate, and there's a chance you could lose some or all of your money.\n\nTo put it simply:\n- **Saving** = Keeping money safe for short-term needs with lower risk.\n- **Investing** = Using money to grow your wealth over the long term with higher risk.\n\nA good strategy often includes both saving for immediate needs and investing for future growth. For example, you might save for a vacation in a few months while investing for retirement, which is many years away. Let me know if you have more questions or need further clarification!",
+      "actual_answer": "Great question! Understanding the difference between saving and investing is crucial for managing your finances effectively.\n\n**Saving** is the act of setting aside a portion of your income for future use. It's typically done in a safe manner, such as in a savings account at a bank, where your money can earn interest over time. The primary goal of saving is to have funds available for short-term needs or emergencies. For example, you might save for a vacation, a new appliance, or an unexpected expense.\n\n**Investing**, on the other hand, involves using your savings to purchase assets that you expect will generate a return over time. This can include stocks, bonds, mutual funds, or real estate. Investing generally carries a higher level of risk compared to saving, as the value of your investments can fluctuate due to market conditions. The goal of investing is to grow your wealth over the long term and to outpace inflation, thereby increasing your purchasing power for future needs or goals, such as retirement or a child's education.\n\nIn summary:\n- **Saving**: Safe, short-term, lower interest returns, aimed at accessibility and security.\n- **Investing**: Higher risk, long-term growth potential, aimed at increasing wealth.\n\nIt's often wise to have a mix of both saving and investing in your financial strategy, depending on your goals and time horizon!",
       "contexts": [
+        "Steps to Successful Saving ................................................................................................................... 19 \nBarriers to Saving .....................................",
         "out? How important do you think it is \nto try and help others in need?\nHow About You?\n177\nMODULE 13\nInvesting Money\nSaving is holding on to some of your money to use \nit in the future. Investing is wh...",
         "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi...",
-        "Steps to Successful Saving ................................................................................................................... 19 \nBarriers to Saving .....................................",
+        "3) GROW YOUR SAVINGS. Research different types of saving and/or investing accounts. \nEach one has different rates of return, and as a result have a different rate of risk \nassociated with them. Choose...",
         "Having the ability to save money is a skill that will provide you with financial comfort, both in \nthe present and in the future. You can save your money in a variety of ways, with the most \ncommon be...",
-        "education, you won\u2019t want to take on much risk. \nSomeone who doesn\u2019t need their money until their \nretirement in 35 years will likely be willing to take \nmore risk. \nAre you aware of any investments \n..."
+        "Risk in investments is the degree of uncertainty or potential loss of all or part of your \ninvestment amount. In general, the greater the perceived risk of an investment, the higher the \nrate of retur...",
+        "an investment. \n\u2022 How much you have to invest. Those with more \nmoney to invest are usually in a position to accept \nmore risk since it is easier for them to afford a loss.\n\u2022 Your goals and how much y...",
+        "savings are put to use in investment \u2013 and that \ninvestment helps to make things better \u2013 and helps \nincrease the level of wealth that is produced \u2013 then \nthose funds have helped to create value and b...",
+        "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds...",
+        "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ...",
+        "education, you won\u2019t want to take on much risk. \nSomeone who doesn\u2019t need their money until their \nretirement in 35 years will likely be willing to take \nmore risk. \nAre you aware of any investments \n...",
+        "essence, the money saved by savers in our economy \nis placed into investments that allow the productive \ncapacity of the economy to grow. In this way, our \neconomy is able to develop and grow over tim..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 555,
-          "score": 0.5926105,
-          "text": "out? How important do you think it is \nto try and help others in need?\nHow About You?\n177\nMODULE 13\nInvesting Money\nSaving is holding on to some of your money to use \nit in the future. Investing is wh..."
-        },
-        {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 59,
-          "score": 0.59082353,
-          "text": "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi..."
-        },
-        {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 5,
-          "score": 0.52222955,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Steps to Successful Saving ................................................................................................................... 19 \nBarriers to Saving ....................................."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 53,
-          "score": 0.5148282,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "out? How important do you think it is \nto try and help others in need?\nHow About You?\n177\nMODULE 13\nInvesting Money\nSaving is holding on to some of your money to use \nit in the future. Investing is wh..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "3) GROW YOUR SAVINGS. Research different types of saving and/or investing accounts. \nEach one has different rates of return, and as a result have a different rate of risk \nassociated with them. Choose..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Having the ability to save money is a skill that will provide you with financial comfort, both in \nthe present and in the future. You can save your money in a variety of ways, with the most \ncommon be..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 563,
-          "score": 0.5146432,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Risk in investments is the degree of uncertainty or potential loss of all or part of your \ninvestment amount. In general, the greater the perceived risk of an investment, the higher the \nrate of retur..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "an investment. \n\u2022 How much you have to invest. Those with more \nmoney to invest are usually in a position to accept \nmore risk since it is easier for them to afford a loss.\n\u2022 Your goals and how much y..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "savings are put to use in investment \u2013 and that \ninvestment helps to make things better \u2013 and helps \nincrease the level of wealth that is produced \u2013 then \nthose funds have helped to create value and b..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "education, you won\u2019t want to take on much risk. \nSomeone who doesn\u2019t need their money until their \nretirement in 35 years will likely be willing to take \nmore risk. \nAre you aware of any investments \n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "essence, the money saved by savers in our economy \nis placed into investments that allow the productive \ncapacity of the economy to grow. In this way, our \neconomy is able to develop and grow over tim..."
         }
       ],
       "metrics": {
@@ -214,43 +334,50 @@
     {
       "query": "If I invest $500 monthly at 7% annual return for 20 years, how much will I have?",
       "expected_answer": "Approximately $260,463 using monthly compounding and the future value of an annuity formula.",
-      "actual_answer": "To determine how much you will have after investing $500 monthly at a 7% annual return for 20 years, we can use the future value of a series formula, which accounts for regular contributions.\n\nThe formula for the future value of a series of cash flows (like monthly contributions) is:\n\n\\[ FV = P \\times \\frac{(1 + r)^n - 1}{r} \\]\n\nWhere:\n- \\( FV \\) is the future value of the investment\n- \\( P \\) is the monthly investment (in this case, $500)\n- \\( r \\) is the monthly interest rate (annual rate divided by 12 months)\n- \\( n \\) is the total number of contributions (number of years times 12)\n\nGiven:\n- Monthly investment \\( P = 500 \\)\n- Annual interest rate = 7%, so monthly interest rate \\( r = \\frac{0.07}{12} \\approx 0.0058333 \\)\n- Total number of contributions \\( n = 20 \\times 12 = 240 \\)\n\nNow, plugging the values into the formula:\n\n\\[ FV = 500 \\times \\frac{(1 + 0.0058333)^{240} - 1}{0.0058333} \\]\n\nCalculating that:\n\n1. Calculate \\( (1 + 0.0058333)^{240} \\):\n   - This results in approximately 4.038.\n   \n2. Now, subtract 1:\n   - \\( 4.038 - 1 = 3.038 \\).\n\n3. Divide by the monthly interest rate:\n   - \\( \\frac{3.038}{0.0058333} \\approx 520.03 \\).\n\n4. Finally, multiply by the monthly contribution:\n   - \\( FV \\approx 500 \\times 520.03 \\approx 260,015 \\).\n\nSo, after 20 years of investing $500 monthly at a 7% annual return, you will have approximately **$260,015**. \n\nThis illustrates the power of consistent investing and compounding over time! If you have any further questions or need more detailed calculations, feel free to ask!",
+      "actual_answer": "To calculate the future value of your investment, we can use the formula for the future value of a series of cash flows (like monthly investments) compounded at a certain interest rate. \n\nThe formula is:\n\n\\[ FV = P \\times \\frac{(1 + r)^n - 1}{r} \\]\n\nWhere:\n- \\( FV \\) is the future value of the investment.\n- \\( P \\) is the monthly investment amount ($500).\n- \\( r \\) is the monthly interest rate (annual rate / 12).\n- \\( n \\) is the total number of investments (number of years \u00d7 12).\n\nIn your case:\n- Annual interest rate = 7%, so monthly rate \\( r = \\frac{0.07}{12} \\approx 0.005833 \\).\n- Total investment period = 20 years, so \\( n = 20 \\times 12 = 240 \\).\n\nNow, plugging in the numbers:\n\n\\[ FV = 500 \\times \\frac{(1 + 0.005833)^{240} - 1}{0.005833} \\]\n\nCalculating it step-by-step:\n\n1. Calculate \\( (1 + 0.005833)^{240} \\):\n   - This will give you approximately 4.013.\n\n2. Subtract 1:\n   - \\( 4.013 - 1 = 3.013 \\).\n\n3. Divide by \\( r \\):\n   - \\( \\frac{3.013}{0.005833} \\approx 516.4 \\).\n\n4. Multiply by \\( P \\):\n   - \\( FV = 500 \\times 516.4 \\approx 258,200 \\).\n\nSo, if you invest $500 monthly at a 7% annual return for 20 years, you would have approximately **$258,200** at the end of that period. \n\nThat\u2019s the power of consistent investing and compound interest! If you have any more questions or need further assistance, feel free to ask!",
       "contexts": [
         "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq...",
+        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
         "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
         "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow...",
-        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
+        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
         "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 633,
-          "score": 0.59251463,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 634,
-          "score": 0.55844945,
-          "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
-        },
-        {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 88,
-          "score": 0.52626,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 544,
-          "score": 0.51719046,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 80,
-          "score": 0.48841766,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it..."
         }
       ],
@@ -264,44 +391,58 @@
     {
       "query": "What is a credit score and why does it matter?",
       "expected_answer": "A credit score is a numerical representation of your creditworthiness, typically ranging from 300-850, that lenders use to evaluate your risk when borrowing money. It affects loan approval, interest rates, and even rental applications.",
-      "actual_answer": "A credit score is a numerical representation of your creditworthiness, typically ranging from 300 to 850. It's calculated based on various factors related to your credit history, such as:\n\n1. **Payment History (35%)**: This shows whether you pay your bills on time. Consistent on-time payments positively impact your score.\n   \n2. **Credit Utilization (30%)**: This is the amount of credit you\u2019re using compared to your total available credit. Ideally, you should keep this below 30% to maintain a good score.\n   \n3. **Length of Credit History (15%)**: This considers how long your credit accounts have been active. A longer credit history can positively influence your score.\n   \n4. **Types of Credit (10%)**: Having a mix of different types of credit (like credit cards, loans, etc.) can also be beneficial.\n   \n5. **New Credit Applications (10%)**: Frequently applying for new credit can lower your score, as it may indicate financial trouble.\n\n**Why It Matters:**\n- **Loan Approval**: Lenders use your credit score to determine whether to approve your application for loans or credit cards.\n- **Interest Rates**: A higher credit score usually leads to better interest rates. This means you\u2019ll pay less over time on loans and credit.\n- **Renting**: Landlords may check your credit score as part of the rental application process.\n- **Insurance Rates**: Some insurance companies use credit scores to determine premiums.\n\nIn essence, your credit score serves as a key indicator of your financial health and responsibility, influencing many aspects of your financial life. Maintaining a good credit score can save you money and open up more opportunities.",
+      "actual_answer": "A credit score is a numerical representation of your creditworthiness, typically ranging from 300 to 850. It reflects how reliable you are when it comes to repaying borrowed money. Several factors contribute to your credit score, including:\n\n1. **Payment History (35%)**: This is the most significant factor, indicating whether you pay your bills on time.\n2. **Credit Utilization (30%)**: This measures how much of your available credit you are using. Ideally, you should keep this below 30%.\n3. **Length of Credit History (15%)**: This considers how long your accounts have been active. A longer credit history generally has a positive impact.\n4. **Types of Credit (10%)**: Having a mix of different types of credit accounts (like credit cards, auto loans, etc.) can be beneficial.\n5. **New Credit Applications (10%)**: This looks at how many new accounts you\u2019ve opened and how many recent inquiries have been made on your credit report.\n\n**Why does it matter?**\n\n1. **Loan Approval**: Lenders use your credit score to determine whether to approve your loan application, whether it's for a mortgage, car loan, or credit card.\n   \n2. **Interest Rates**: A higher credit score generally means better interest rates. This translates to lower monthly payments and less paid in interest over time.\n\n3. **Insurance Premiums**: Some insurance companies use credit scores to determine premiums. A higher score can lead to lower rates.\n\n4. **Renting a Home**: Landlords may check your credit score as part of the rental application process. A good score can make it easier to secure a rental.\n\n5. **Employment Opportunities**: Some employers check credit scores during the hiring process, especially for positions that involve financial responsibilities.\n\nIn summary, maintaining a good credit score is essential as it can significantly affect your financial opportunities and costs. Regularly monitoring your credit report and practicing good credit habits can help you build and maintain a strong score.",
       "contexts": [
         "Credit is borrowed money you agree to repay, often with interest. Your credit history\u2014\ntracked in a report and re\ufb02ected in a credit score (typically 300\u2013850)\u2014helps lenders \ndecide whether to lend to y...",
-        "Using your credit responsibly has many benefits, with the most obvious being that you\u2019ll pay \nless in interest and/or late fees over time. One of the less obvious reasons is how you use your \ncredit d...",
         "the payments on the loan. Do you have enough \nincome to pay the monthly cost? Do you have other \nexpenses that may make it hard for you to make the \nmonthly payments? Do you have other debts? What \nyo...",
+        "Using your credit responsibly has many benefits, with the most obvious being that you\u2019ll pay \nless in interest and/or late fees over time. One of the less obvious reasons is how you use your \ncredit d...",
         "Your credit bureau is created the first time you apply for credit, whether that is a student loan, \na mobile phone plan, or your first credit card. Your credit history stays on your credit bureau \nthr...",
-        "700 indicates a good credit risk, and below 650 is a problem. Remember, you can work to \nimprove your score, no matter how low it is right now. \nReasons Your Score May Be Lowered \n\uf0b7 Derogatory public ..."
+        "FICO Has Disclosed the General Structure of How Their Model Scores \n35% = payment history (have you paid on time, especially over past two years) \n30% = amounts owed (how much owed total, and how much...",
+        "will usually do a \u201ccredit check\u201d on you. Make sure \nyou pay back loans and make payments on time so \nthat you have a good credit record.\n\u2022 There are a variety of reasons why you may want \nto borrow mo...",
+        "prove that you are a good payer. Having no credit history means lenders may turn down your \nloan application or charge a much higher rate of interest, utility companies may charge you a \nhigher deposi..."
       ],
       "sources": [
         {
-          "source": "financialliteracy101.txt",
-          "chunk_id": 3,
-          "score": 0.6256507,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Credit is borrowed money you agree to repay, often with interest. Your credit history\u2014\ntracked in a report and re\ufb02ected in a credit score (typically 300\u2013850)\u2014helps lenders \ndecide whether to lend to y..."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 46,
-          "score": 0.5786128,
-          "text": "Using your credit responsibly has many benefits, with the most obvious being that you\u2019ll pay \nless in interest and/or late fees over time. One of the less obvious reasons is how you use your \ncredit d..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 512,
-          "score": 0.5360177,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "the payments on the loan. Do you have enough \nincome to pay the monthly cost? Do you have other \nexpenses that may make it hard for you to make the \nmonthly payments? Do you have other debts? What \nyo..."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 47,
-          "score": 0.5143814,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Using your credit responsibly has many benefits, with the most obvious being that you\u2019ll pay \nless in interest and/or late fees over time. One of the less obvious reasons is how you use your \ncredit d..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Your credit bureau is created the first time you apply for credit, whether that is a student loan, \na mobile phone plan, or your first credit card. Your credit history stays on your credit bureau \nthr..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 102,
-          "score": 0.5006037,
-          "text": "700 indicates a good credit risk, and below 650 is a problem. Remember, you can work to \nimprove your score, no matter how low it is right now. \nReasons Your Score May Be Lowered \n\uf0b7 Derogatory public ..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "FICO Has Disclosed the General Structure of How Their Model Scores \n35% = payment history (have you paid on time, especially over past two years) \n30% = amounts owed (how much owed total, and how much..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "will usually do a \u201ccredit check\u201d on you. Make sure \nyou pay back loans and make payments on time so \nthat you have a good credit record.\n\u2022 There are a variety of reasons why you may want \nto borrow mo..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "prove that you are a good payer. Having no credit history means lenders may turn down your \nloan application or charge a much higher rate of interest, utility companies may charge you a \nhigher deposi..."
         }
       ],
       "metrics": {
@@ -314,44 +455,58 @@
     {
       "query": "What is good debt versus bad debt?",
       "expected_answer": "Good debt includes loans that can increase your wealth or income potential, like mortgages or student loans with reasonable rates. Bad debt includes high-interest consumer debt like credit cards used for unnecessary purchases that don't build wealth.",
-      "actual_answer": "Great question! Understanding the difference between good debt and bad debt is essential for managing your finances effectively.\n\n**Good Debt** refers to borrowing that helps you build wealth or enhances your financial future. Examples include:\n\n1. **Student Loans**: While they can be burdensome, investing in education often leads to higher earning potential.\n2. **Mortgages**: Buying a home typically appreciates in value over time, making it a good long-term investment.\n3. **Business Loans**: If you\u2019re starting a business, borrowing funds can help you generate income and achieve your entrepreneurial goals.\n\n**Bad Debt**, on the other hand, often does not contribute to your financial growth and can lead to financial strain. Examples include:\n\n1. **Credit Card Debt**: Especially when used for non-essential purchases, high-interest credit card debt can accumulate quickly and become overwhelming.\n2. **High-Interest Personal Loans**: If the debt is taken on for lifestyle expenses rather than investments, it can be detrimental.\n3. **Payday Loans**: These typically come with extremely high-interest rates and can trap borrowers in a cycle of debt.\n\nIn summary, good debt can be a tool for building wealth or achieving important life goals, while bad debt can hinder your financial progress and lead to stress. It\u2019s important to borrow wisely and ensure that the debt you take on is manageable and serves a beneficial purpose in your life. Always consider whether the benefits of the debt outweigh the costs!",
+      "actual_answer": "Great question! Understanding the difference between good debt and bad debt is crucial for managing your finances effectively.\n\n**Good Debt:**\nGood debt is typically considered to be debt that helps you to achieve a long-term financial goal or increases your net worth. Here are some examples:\n\n1. **Student Loans:** Investing in your education can lead to higher earning potential in the future.\n2. **Mortgages:** Buying a home can appreciate in value over time, and having a mortgage can be a way to build equity.\n3. **Business Loans:** If you\u2019re starting or expanding a business, this debt can generate income and increase your assets.\n\nIn essence, good debt is an investment in your future, generating value or income over time.\n\n**Bad Debt:**\nBad debt, on the other hand, is debt that does not provide long-term benefits and can lead to financial instability. Examples include:\n\n1. **Credit Card Debt:** Particularly when carrying a balance with high-interest rates for non-essential purchases.\n2. **Personal Loans for Consumption:** Taking out loans for vacations or luxury items that don\u2019t add value to your life.\n3. **Payday Loans:** These often come with extremely high interest rates and can lead to a cycle of debt.\n\nBad debt tends to hinder your financial progress and can lead to higher monthly payments without meaningful returns.\n\n### Key Takeaways:\n- **Evaluate the Purpose:** Ask yourself if the debt will help you generate income or appreciate in value.\n- **Understand the Costs:** High-interest debt can become problematic, regardless of its classification.\n- **Borrow Wisely:** Always stay within limits you can afford to pay back, and avoid borrowing more than necessary.\n\nBy carefully distinguishing between good and bad debt, you can make more informed decisions that will benefit your financial health in the long run!",
       "contexts": [
         "30% \nCredit \nHistory \nHow long has the credit been \nactive? \nLONG HISTORY: POSITIVE IMPACT \nSHORT HISTORY: NEGATIVE IMPACT 15% \nInquiries \nHave many credit checks been \ndone over a short time period? ...",
         "usually be greater than the interest you earn on \nyour investments. It may make sense to give up the \ninvestment to do away with the debt. \n\u2022 Seek some professional advice and counselling if \nyou can ...",
         "is worth the cost of the debt to get something \nyou\u2019ve always wanted. Remember \u2013 an important \npart of managing money is to be happy. Having debt \ntroubles won\u2019t make you happy. You will want to do \na...",
-        "\uf0b7 \nUnless well-documented in advance, you may get stuck with the rest of the debt anyway. \n\uf0b7 \nCollectors may still report the account as bad credit, \u201csettled for less than full balance.\u201d \n\uf0b7 \nCollector...",
-        "be a 25% rate ($400 \u00f7 $1600 = .25, or 25%). \nHow Much Debt Is Too Much? \n\uf0b7 10 percent (congratulations, you are like 85% of all American families, in control) \n\uf0b7 15 percent (you are on the edge, try t..."
+        "Let\u2019s begin by covering a few terms. \nA debtor is someone who borrows money from \nothers. A creditor is someone who lends money to \nothers. A debt is a liability \u2013 something that you \nowe. A credit is...",
+        "most. These types of debts are not usually problematic on their own. \nMismanagement of debt occurs when a person is consistently spending more than they are \nmaking. This could be the result of unexpe...",
+        "need or trouble \u2013 help you with large purchases \n\u2013 help you manage your monthly cash \ufb02ow \n(consolidation loan) \u2013 and so on. \nModule 11\nWhat is your attitude towards \nborrowing money? There is an old \n...",
+        "Or are credit cards almost a necessity today?\n\u2022 Do you know others who are having money troubles \u2013 or \nwho you think are headed to money trouble? If so, what\u2019s \ncausing this?  \n\u2022 Know what debt you ca..."
       ],
       "sources": [
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 48,
-          "score": 0.5700924,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "30% \nCredit \nHistory \nHow long has the credit been \nactive? \nLONG HISTORY: POSITIVE IMPACT \nSHORT HISTORY: NEGATIVE IMPACT 15% \nInquiries \nHave many credit checks been \ndone over a short time period? ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 533,
-          "score": 0.56934786,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "usually be greater than the interest you earn on \nyour investments. It may make sense to give up the \ninvestment to do away with the debt. \n\u2022 Seek some professional advice and counselling if \nyou can ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 468,
-          "score": 0.5582435,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "is worth the cost of the debt to get something \nyou\u2019ve always wanted. Remember \u2013 an important \npart of managing money is to be happy. Having debt \ntroubles won\u2019t make you happy. You will want to do \na..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 64,
-          "score": 0.53564537,
-          "text": "\uf0b7 \nUnless well-documented in advance, you may get stuck with the rest of the debt anyway. \n\uf0b7 \nCollectors may still report the account as bad credit, \u201csettled for less than full balance.\u201d \n\uf0b7 \nCollector..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Let\u2019s begin by covering a few terms. \nA debtor is someone who borrows money from \nothers. A creditor is someone who lends money to \nothers. A debt is a liability \u2013 something that you \nowe. A credit is..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 41,
-          "score": 0.5330354,
-          "text": "be a 25% rate ($400 \u00f7 $1600 = .25, or 25%). \nHow Much Debt Is Too Much? \n\uf0b7 10 percent (congratulations, you are like 85% of all American families, in control) \n\uf0b7 15 percent (you are on the edge, try t..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "most. These types of debts are not usually problematic on their own. \nMismanagement of debt occurs when a person is consistently spending more than they are \nmaking. This could be the result of unexpe..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "need or trouble \u2013 help you with large purchases \n\u2013 help you manage your monthly cash \ufb02ow \n(consolidation loan) \u2013 and so on. \nModule 11\nWhat is your attitude towards \nborrowing money? There is an old \n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Or are credit cards almost a necessity today?\n\u2022 Do you know others who are having money troubles \u2013 or \nwho you think are headed to money trouble? If so, what\u2019s \ncausing this?  \n\u2022 Know what debt you ca..."
         }
       ],
       "metrics": {
@@ -364,44 +519,72 @@
     {
       "query": "How does inflation affect my savings?",
       "expected_answer": "Inflation reduces the purchasing power of money over time, meaning your savings can buy less in the future than they can today if the interest earned doesn't keep pace with inflation rates.",
-      "actual_answer": "Inflation can significantly impact your savings by reducing their purchasing power over time. Essentially, when inflation rises, the prices of goods and services increase, meaning that the same amount of money will buy you less in the future than it does today.\n\nFor example, if you have $1,000 saved and the inflation rate is 3%, that $1,000 may only have the purchasing power of about $970 a year later. This is why it's important to earn a return on your savings that at least matches or exceeds the inflation rate. If your savings account earns 3% interest while inflation is also 3%, your purchasing power stays the same. However, if you earn less than 3%, your savings will effectively lose value.\n\nTo protect your savings from inflation, consider investing in options that have the potential for higher returns, such as stocks, bonds, or mutual funds, rather than just keeping your money in a low-interest savings account. This way, you can help ensure that your savings grow in value over time, keeping pace with or outpacing inflation. \n\nIn summary, being aware of inflation is crucial for effective financial planning, as it helps you understand how to maintain the value of your savings in the long term.",
+      "actual_answer": "Inflation can have a significant impact on your savings. Essentially, inflation is the rate at which the general level of prices for goods and services rises, which erodes purchasing power. Here\u2019s how it works in relation to your savings:\n\n1. **Purchasing Power Decline**: If your savings account earns a low interest rate\u2014say, 1%\u2014but inflation is at 3%, the real value of your savings effectively decreases. This means that even though you may have more money in nominal terms, you can buy less with it because prices have risen.\n\n2. **Earning Interest**: Ideally, you want to earn an interest rate on your savings that is at least equal to the inflation rate. If you earn 3% interest on your savings while inflation is also 3%, your purchasing power remains stable. However, if you earn less than the inflation rate, your savings could lose value over time.\n\n3. **Investing to Keep Up with Inflation**: To protect your savings from losing value due to inflation, it\u2019s important to consider investing some of your money. Investments like stocks, bonds, or mutual funds have the potential to offer higher returns than typical savings accounts, which can help your money grow at a rate that outpaces inflation.\n\n4. **Compounding Effect**: If you start saving or investing early, the power of compound interest can significantly increase your savings over time. For instance, if you invest a small amount monthly into an account that earns a higher return, your money will grow faster than if it were just sitting in a low-interest savings account.\n\nIn summary, to effectively manage your savings against inflation, aim for investment returns that exceed the inflation rate. This will help maintain or even increase the purchasing power of your savings over time. If you have specific concerns or circumstances, feel free to share, and I can provide more tailored advice!",
       "contexts": [
         "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu...",
-        "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav...",
         "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
+        "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav...",
+        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
+        "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
         "them to work. \nProtecting the value of your savings is \u201cjob one.\u201d \nYou don\u2019t want money you hold for the future to buy \nless later than you could buy today. Lately, the rate \nof in\ufb02ation (the increase...",
-        "Take Act ion. \n  Take Control!\nThat means to protect your savings from losing \nvalue to in\ufb02ation, you want to make at least 2% on \nyour savings if you can. That may sound easy but, if \ninterest rates ..."
+        "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds...",
+        "Take Act ion. \n  Take Control!\nThat means to protect your savings from losing \nvalue to in\ufb02ation, you want to make at least 2% on \nyour savings if you can. That may sound easy but, if \ninterest rates ...",
+        "Those who held on, and didn\u2019t panic,in many cases, \ngot their money back. So avoid panic.Be careful \nabout making quick decisions if things startto go a \nlittle crazy. That is also when an advisor can..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 326,
-          "score": 0.59898543,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 325,
-          "score": 0.5438379,
-          "text": "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 634,
-          "score": 0.505779,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 556,
-          "score": 0.49809963,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "them to work. \nProtecting the value of your savings is \u201cjob one.\u201d \nYou don\u2019t want money you hold for the future to buy \nless later than you could buy today. Lately, the rate \nof in\ufb02ation (the increase..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 557,
-          "score": 0.48558423,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Take Act ion. \n  Take Control!\nThat means to protect your savings from losing \nvalue to in\ufb02ation, you want to make at least 2% on \nyour savings if you can. That may sound easy but, if \ninterest rates ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Those who held on, and didn\u2019t panic,in many cases, \ngot their money back. So avoid panic.Be careful \nabout making quick decisions if things startto go a \nlittle crazy. That is also when an advisor can..."
         }
       ],
       "metrics": {
@@ -414,44 +597,51 @@
     {
       "query": "If I invest $10,000 at 6% for 10 years, how much will I have?",
       "expected_answer": "Approximately $18,194 using compound interest on a lump sum investment with annual compounding.",
-      "actual_answer": "To find out how much you'll have after investing $10,000 at an annual interest rate of 6% for 10 years, we can use the formula for compound interest. The formula is:\n\n\\[ A = P (1 + r)^n \\]\n\nWhere:\n- \\( A \\) is the amount of money accumulated after n years, including interest.\n- \\( P \\) is the principal amount (the initial amount of money).\n- \\( r \\) is the annual interest rate (decimal).\n- \\( n \\) is the number of years the money is invested or borrowed.\n\nIn your case:\n- \\( P = 10,000 \\)\n- \\( r = 0.06 \\) (6% as a decimal)\n- \\( n = 10 \\)\n\nPlugging in the numbers:\n\n\\[ A = 10,000 (1 + 0.06)^{10} \\]\n\\[ A = 10,000 (1.06)^{10} \\]\n\\[ A = 10,000 \\times 1.79084 \\] (approximately)\n\\[ A \\approx 17,908.40 \\]\n\nSo, after 10 years, you would have approximately **$17,908.40** from your initial investment of $10,000 at 6% interest compounded annually. \n\nThis demonstrates how powerful compound interest can be over time! If you have any more questions or need further assistance, feel free to ask!",
+      "actual_answer": "To calculate how much you will have after investing $10,000 at an interest rate of 6% for 10 years, you can use the formula for compound interest:\n\n\\[ A = P (1 + r/n)^{nt} \\]\n\nWhere:\n- \\( A \\) is the amount of money accumulated after n years, including interest.\n- \\( P \\) is the principal amount (the initial amount of money).\n- \\( r \\) is the annual interest rate (decimal).\n- \\( n \\) is the number of times that interest is compounded per year.\n- \\( t \\) is the number of years the money is invested for.\n\nFor simplicity, let's assume the interest is compounded annually (n = 1):\n\n- \\( P = 10,000 \\)\n- \\( r = 0.06 \\) (6%)\n- \\( n = 1 \\)\n- \\( t = 10 \\)\n\nNow plug in the values:\n\n\\[ A = 10,000 (1 + 0.06/1)^{1 \\times 10} \\]\n\\[ A = 10,000 (1 + 0.06)^{10} \\]\n\\[ A = 10,000 (1.06)^{10} \\]\n\nCalculating \\( (1.06)^{10} \\) gives approximately 1.79085.\n\nSo:\n\n\\[ A \\approx 10,000 \\times 1.79085 \\]\n\\[ A \\approx 17,908.50 \\]\n\nAfter 10 years, you will have approximately **$17,908.50**. This means you will have earned about **$7,908.50** in interest on your investment. \n\nIf you have any more questions or need further assistance, feel free to ask!",
       "contexts": [
+        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
         "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
         "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq...",
         "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
-        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow...",
-        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        "a 6% bond, and the interest rate generally offered \non new bonds is 4%, then your bond becomes \nmore valuable. Someone looking to buy a bond will \nbe able to get a higher return from your bond than \na...",
+        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 634,
-          "score": 0.5805936,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 633,
-          "score": 0.5675448,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 544,
-          "score": 0.5389441,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 88,
-          "score": 0.51114595,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "a 6% bond, and the interest rate generally offered \non new bonds is 4%, then your bond becomes \nmore valuable. Someone looking to buy a bond will \nbe able to get a higher return from your bond than \na..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 482,
-          "score": 0.4854535,
-          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
         }
       ],
       "metrics": {
@@ -464,44 +654,51 @@
     {
       "query": "What is diversification in investing?",
       "expected_answer": "Diversification is the practice of spreading investments across different asset types, sectors, or geographic regions to reduce risk. It follows the principle of not putting all your eggs in one basket.",
-      "actual_answer": "Diversification in investing is a strategy that involves spreading your investments across a variety of assets to reduce risk. The idea is similar to the saying \"don't put all your eggs in one basket.\" By diversifying, you lower the chance that a poor performance in one investment will significantly impact your overall portfolio.\n\nHere\u2019s how it works:\n\n1. **Different Types of Investments**: You can invest in various types of assets, such as stocks, bonds, mutual funds, and real estate. For example, if one sector (like technology) is struggling, other sectors (like healthcare or consumer goods) might perform well, balancing out your overall returns.\n\n2. **Varied Locations**: You can also diversify geographically by investing in different markets, such as those in Canada, the U.S., Europe, or Asia. This way, you're not overly reliant on the economic conditions of a single country.\n\n3. **Risk Levels**: You can mix investments with different levels of risk. Some investments may be relatively stable (like government bonds), while others may be more volatile (like stocks). This balance can help manage your risk exposure.\n\nA practical analogy is comparing diversification to betting on a horse race. If you bet on just one horse, your success depends entirely on that horse winning. However, if you bet on every horse in the race (like investing in a mutual fund that holds many stocks), you increase your chances of seeing a positive outcome.\n\nIn summary, diversification is a fundamental principle of investing that helps protect your portfolio from significant losses, ensuring that when some investments decline, others may rise, helping to stabilize your overall returns.",
+      "actual_answer": "Diversification in investing is a strategy that involves spreading your investments across a variety of asset types, industries, and geographic locations. The primary goal of diversification is to reduce risk. \n\nThink of it like this: if you were to put all your eggs in one basket, and that basket fell, you would lose everything. However, if you spread those eggs across several baskets, even if one basket falls, you still have others that may remain safe. \n\nIn practical terms, here\u2019s how you can diversify:\n\n1. **Asset Types**: Instead of investing solely in one type of asset (like stocks), consider a mix that includes bonds, mutual funds, real estate, and perhaps even alternative investments like collectibles or business ventures.\n\n2. **Industries**: Invest in companies across different sectors (technology, healthcare, finance, etc.). This way, if one industry faces challenges, your overall portfolio isn't severely impacted.\n\n3. **Geographical Locations**: Consider investing in markets beyond your home country. For example, you might invest in U.S. companies, European stocks, and emerging markets in Asia. This can help protect your portfolio from localized economic downturns.\n\n4. **Risk Levels**: Include a mix of high-risk and low-risk investments. While some investments may offer the potential for higher returns, they also come with greater risk. Balancing these can help stabilize your portfolio.\n\nBy diversifying, you aim to lower the overall risk of your investment portfolio while still having the opportunity for growth. Remember, the key rule of investing is to \"diversify, diversify, diversify!\"",
       "contexts": [
         "You will want to have a good mix of different kinds of \ninvestments. Why? Because that provides you with \nsome protection. If some of your investments fall \nin value, others may rise. If some are quit...",
         "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves...",
         "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything...",
         "185\nMODULE 13\nThese are the kinds of questions that you will be \nasked \u2013 or that you should ask yourself \u2013 to get an \nidea of your \u201cinvestorpro\ufb01le.\u201d Once this is known, \nyou can start building your \u201cp...",
-        "Learn About\nLearn About\nSo those are the three general types of investments. \nYou can also invest in other things such as real \nestate, collectibles (art, cars, etc.), directly in a busi-\nness as an o..."
+        "Learn About\nLearn About\nSo those are the three general types of investments. \nYou can also invest in other things such as real \nestate, collectibles (art, cars, etc.), directly in a busi-\nness as an o...",
+        "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 588,
-          "score": 0.6498891,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "You will want to have a good mix of different kinds of \ninvestments. Why? Because that provides you with \nsome protection. If some of your investments fall \nin value, others may rise. If some are quit..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 86,
-          "score": 0.58266234,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 591,
-          "score": 0.54245126,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 587,
-          "score": 0.5124899,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "185\nMODULE 13\nThese are the kinds of questions that you will be \nasked \u2013 or that you should ask yourself \u2013 to get an \nidea of your \u201cinvestorpro\ufb01le.\u201d Once this is known, \nyou can start building your \u201cp..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 585,
-          "score": 0.50970525,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Learn About\nLearn About\nSo those are the three general types of investments. \nYou can also invest in other things such as real \nestate, collectibles (art, cars, etc.), directly in a busi-\nness as an o..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
         }
       ],
       "metrics": {
@@ -514,44 +711,79 @@
     {
       "query": "What is a 401(k)?",
       "expected_answer": "A 401(k) is an employer-sponsored retirement savings plan that allows employees to contribute pre-tax income, often with employer matching contributions, and the money grows tax-deferred until withdrawal in retirement.",
-      "actual_answer": "A 401(k) is a type of retirement savings plan that is offered by many employers in the United States. It allows employees to contribute a portion of their paycheck to a retirement account before taxes are taken out. Here are some key features of a 401(k) plan:\n\n1. **Tax Advantages**: The money you contribute to a 401(k) is deducted from your taxable income, which can lower your tax bill for the year. You won't pay taxes on this money until you withdraw it during retirement, typically after age 59\u00bd.\n\n2. **Employer Match**: Many employers offer a matching contribution to your 401(k). This means that for every dollar you contribute, your employer might add a certain percentage. This is essentially \"free money\" that can significantly boost your retirement savings.\n\n3. **Investment Growth**: The money in your 401(k) can be invested in various options, such as stocks, bonds, or mutual funds, allowing it to grow over time. This growth can compound, leading to a larger retirement fund.\n\n4. **Withdrawal Rules**: Generally, you can start withdrawing from your 401(k) without penalties once you reach age 59\u00bd. If you withdraw funds before this age, you may face taxes and early withdrawal penalties.\n\n5. **Contribution Limits**: There are annual limits on how much you can contribute to your 401(k). For example, as of 2023, you can contribute up to $22,500, with an additional catch-up contribution if you're over 50.\n\nIn summary, a 401(k) is a powerful tool for retirement savings, offering tax benefits and the potential for employer contributions, which can help you build a significant nest egg for the future. If your employer offers a 401(k), it\u2019s wise to consider participating, especially if they offer a matching contribution!",
+      "actual_answer": "A 401(k) is a type of retirement savings plan that is sponsored by an employer. It allows employees to save and invest a portion of their paycheck before taxes are taken out. Here\u2019s a breakdown of how it works:\n\n1. **Tax Benefits**: Contributions to a 401(k) are made with pre-tax dollars, meaning you don\u2019t pay income tax on the money until you withdraw it in retirement. This can lower your taxable income in the year you contribute.\n\n2. **Investment Growth**: The money you contribute can be invested in various options, such as stocks, bonds, or mutual funds, allowing it to grow over time. This growth is tax-deferred until you start withdrawing funds.\n\n3. **Employer Match**: Many employers offer a matching contribution, which means they will add a certain amount to your 401(k) based on your contributions. For example, if you contribute 5% of your salary, your employer might match that with an additional 3%. This is essentially free money and can significantly boost your retirement savings.\n\n4. **Withdrawal Rules**: You can typically start withdrawing money from your 401(k) without penalties once you reach the age of 59\u00bd. However, if you withdraw funds before that age, you may incur a penalty in addition to income taxes.\n\n5. **Contribution Limits**: There are annual limits on how much you can contribute to your 401(k). For 2023, the limit for employees under age 50 is $22,500, and for those aged 50 and over, there\u2019s an additional catch-up contribution limit of $7,500.\n\n6. **Portability**: If you change jobs, you can often roll over your 401(k) into a new employer's plan or an individual retirement account (IRA) without incurring taxes or penalties.\n\nIn summary, a 401(k) is a powerful tool for retirement savings that comes with tax advantages and potential employer contributions, making it a great option to help secure your financial future. If you have access to a 401(k) plan, it's generally a good idea to take full advantage of it!",
       "contexts": [
-        "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it...",
         "insurance provided along with Social Security is Medicare, and there are also benefits paid for \nsurvivors (if you died) or disability (if you are unable to work). \nPensions \nSome employers have a pen...",
+        "expenses \n\u2022 bene\ufb01ts for a spouse \n\u2022 access to \ufb01nancial advice \n\u2022 company pension program\nWe should say a little more about this last point.  \nIt is becoming less common for companies to \nprovide a pen...",
+        "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it...",
+        "\u2022 extended health care insurance \n\u2022 disability income insurance (short-term and  \nlong-term) \u2013 which can provide some income if you \nbecome ill or disabled\n\u2022 life insurance \n\u2022 dental insurance \n\u2022 pro\ufb01...",
+        "each year when the employee retires.\n12. De\ufb01ned contribution pension plan: a pension \nplan where the provider commits to contributing a \ncertain amount each year to the plan. There is no \ncommitment t...",
         "the years. \nIndividual Retirement Accounts (IRA and ROTH IRA) \nAnyone can open one of these at a bank or brokerage. You put money in and it grows tax-free \nuntil you start to take it at retirement (af...",
-        "an amount will be deducted each month and deposited into a savings \ninstrument as soon as you receive your pay. It is a way of having \u201cforced \nsavings\u201d \u2013 that is, you set it up with your employer at t...",
-        "repaid to the bondholder.\n7. Minimum wage: the lowest wage that an employer \ncan legally pay an employee.\n8. Disability insurance: protection you can buy to \nprovide an income in the event of a long-t..."
+        "Hopefully, these will build up over time so that, in the \nfuture, they can help to provide an income for you.\nAs an example, suppose that from age 25 you \nsaved and invested $1,000 a year and that you...",
+        "education, you won\u2019t want to take on much risk. \nSomeone who doesn\u2019t need their money until their \nretirement in 35 years will likely be willing to take \nmore risk. \nAre you aware of any investments \n...",
+        "Learn About\nLearn About\nSo those are the three general types of investments. \nYou can also invest in other things such as real \nestate, collectibles (art, cars, etc.), directly in a busi-\nness as an o...",
+        "an \u201cequity\u201d investment is higher \u2013 but so is the risk of \nloss. You want to know what you are doing if you buy \nand sell stocks \u2013 or get some help and advice. \nThere are also \u201cequity funds\u201d \u2013 in the s..."
       ],
       "sources": [
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 80,
-          "score": 0.45006326,
-          "text": "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it..."
-        },
-        {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 79,
-          "score": 0.42524454,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "insurance provided along with Social Security is Medicare, and there are also benefits paid for \nsurvivors (if you died) or disability (if you are unable to work). \nPensions \nSome employers have a pen..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 81,
-          "score": 0.40116155,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "expenses \n\u2022 bene\ufb01ts for a spouse \n\u2022 access to \ufb01nancial advice \n\u2022 company pension program\nWe should say a little more about this last point.  \nIt is becoming less common for companies to \nprovide a pen..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "before that time. Many employers offer a match for what you put in, so it can grow quickly. \n \nThese plans are a fantastic investment, since they are lower your taxes and grow fast. Compare: \nSpend it..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\u2022 extended health care insurance \n\u2022 disability income insurance (short-term and  \nlong-term) \u2013 which can provide some income if you \nbecome ill or disabled\n\u2022 life insurance \n\u2022 dental insurance \n\u2022 pro\ufb01..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "each year when the employee retires.\n12. De\ufb01ned contribution pension plan: a pension \nplan where the provider commits to contributing a \ncertain amount each year to the plan. There is no \ncommitment t..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "the years. \nIndividual Retirement Accounts (IRA and ROTH IRA) \nAnyone can open one of these at a bank or brokerage. You put money in and it grows tax-free \nuntil you start to take it at retirement (af..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 188,
-          "score": 0.3463542,
-          "text": "an amount will be deducted each month and deposited into a savings \ninstrument as soon as you receive your pay. It is a way of having \u201cforced \nsavings\u201d \u2013 that is, you set it up with your employer at t..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Hopefully, these will build up over time so that, in the \nfuture, they can help to provide an income for you.\nAs an example, suppose that from age 25 you \nsaved and invested $1,000 a year and that you..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 192,
-          "score": 0.3404856,
-          "text": "repaid to the bondholder.\n7. Minimum wage: the lowest wage that an employer \ncan legally pay an employee.\n8. Disability insurance: protection you can buy to \nprovide an income in the event of a long-t..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "education, you won\u2019t want to take on much risk. \nSomeone who doesn\u2019t need their money until their \nretirement in 35 years will likely be willing to take \nmore risk. \nAre you aware of any investments \n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Learn About\nLearn About\nSo those are the three general types of investments. \nYou can also invest in other things such as real \nestate, collectibles (art, cars, etc.), directly in a busi-\nness as an o..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "an \u201cequity\u201d investment is higher \u2013 but so is the risk of \nloss. You want to know what you are doing if you buy \nand sell stocks \u2013 or get some help and advice. \nThere are also \u201cequity funds\u201d \u2013 in the s..."
         }
       ],
       "metrics": {
@@ -564,44 +796,65 @@
     {
       "query": "Should I pay off debt or save for retirement first?",
       "expected_answer": "Generally, prioritize high-interest debt (above 7-8%) first, but contribute enough to get any employer 401(k) match since it's free money. Then tackle debt aggressively before increasing retirement savings.",
-      "actual_answer": "Deciding whether to pay off debt or save for retirement first depends on your individual financial situation. Here are some factors to consider that can help guide your decision:\n\n1. **Interest Rates**: If you have high-interest debt (like credit cards), it typically makes sense to focus on paying that off first. The interest on high debt can often outpace any returns you might earn from retirement savings. Conversely, if your debt is low-interest (like a mortgage or student loan), you might prioritize retirement savings.\n\n2. **Employer Match**: If your employer offers a retirement plan, such as a 401(k), with a matching contribution, it\u2019s wise to at least contribute enough to get the full match. This is essentially \"free money\" and can significantly boost your retirement savings.\n\n3. **Emergency Fund**: Before focusing solely on either debt or retirement, ensure you have a small emergency fund in place. This can help you avoid taking on more debt in case unexpected expenses arise.\n\n4. **Long-Term Goals**: Consider your long-term financial goals. If retirement savings are a priority for you, you might balance both by making minimum payments on your debt while contributing to retirement accounts.\n\n5. **Financial Stability**: If you\u2019re struggling to meet your monthly expenses, it may be necessary to focus on paying down debt to alleviate financial stress before committing more to retirement savings.\n\nUltimately, a balanced approach can be effective. For instance, you might pay down high-interest debt while also contributing to a retirement account. As you reduce your debt load, you can shift more of your financial resources towards saving for retirement.\n\nIf you find it challenging to make this decision based on your current circumstances, consider speaking with a financial advisor who can provide personalized advice tailored to your situation.",
+      "actual_answer": "Deciding whether to pay off debt or save for retirement can depend on several factors, including the type of debt you have, your financial situation, and your long-term goals. Here are some considerations to help you make an informed decision:\n\n1. **Type of Debt**: \n   - **High-Interest Debt**: If you have high-interest debt, such as credit card debt, it's generally advisable to prioritize paying that off first. The interest on high-interest debt often accumulates faster than the potential gains from retirement savings.\n   - **Low-Interest Debt**: For low-interest debts, like a mortgage or student loans, you might have more flexibility to balance saving for retirement and paying down those debts.\n\n2. **Emergency Fund**: Before focusing heavily on either debt or retirement savings, ensure you have an emergency fund in place\u2014typically 3 to 6 months' worth of expenses. This can help prevent you from going further into debt when unexpected expenses arise.\n\n3. **Employer Match**: If your employer offers a retirement plan with a matching contribution (like a 401(k)), consider contributing enough to get the full match. This is essentially free money and can significantly boost your retirement savings.\n\n4. **Long-Term Goals**: Think about your long-term financial goals. If financial independence or retirement is a top priority for you, you might want to balance your approach by contributing to retirement savings while also making regular debt payments.\n\n5. **Review and Adjust**: If you find it difficult to manage both debt repayment and retirement savings, you can adjust your strategy over time. Focus on paying down debt aggressively first, and as your debt decreases, shift your focus to increasing your retirement contributions.\n\nIn summary, while it can be tempting to save for retirement, especially with the long-term benefits it provides, addressing high-interest debt should typically take priority to avoid accumulating more financial strain. Consider your unique situation and goals, and adjust your strategy as you go along.",
       "contexts": [
         "Avoid the mindset of only saving \u201cwhat\u2019s left over\u201d \nonce your bills are paid. Determine what your \nsavings goal is, and actively put the appropriate \namount of money towards that each pay. If you\u2019re ...",
         "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi...",
         "if it\u2019s a paid-off car). \n \n4. Then pay your secured debts (car loan) so it will not be repossessed. If you have a good \npayment history, ask the lender if you can skip a month or tack a month onto en...",
         "4. Once you pay off a loan, keep paying that amount \u2013 to your savings account instead. \n5. Put all extra money (bonuses, tax refunds, gift money, rebates) into savings. \nThere are three layers of savi...",
-        "making minimum payments on the rest. Once the smallest is gone, roll that \npayment into the next smallest.\n\u2022 \nCard A: $500 @ 15%\n\u2022 \nCard B: $1,200 @ 18%\n\u2022 \nCard C: $2,000 @ 22%\nStart with Card A, then..."
+        "8% \n12% \n18% \n2% \n61 \n70 \n93 \n3% \n38 \n41 \n47 \n5% \n21 \n23 \n24 \n10% \n10 \n11 \n11 \nMonthly Payment \n% of Balance Paid \nFour Cornerstones of Financial Literacy \u2013 Version I.4 \nPage 17 \nPRIORITIZE YOUR DEBTS...",
+        "reduce those risks?\nDiscuss\nWe encourage you to look ahead to your \ufb01nan-\ncial future not so much as \u201cplanning to retire\u201d but \nrather planning to build up \u201cnon-working\u201d sources of \nincome so that you c...",
+        "usually be greater than the interest you earn on \nyour investments. It may make sense to give up the \ninvestment to do away with the debt. \n\u2022 Seek some professional advice and counselling if \nyou can ...",
+        "There are a number of factors to consider, such as: how much money you\u2019ll \nneed each year to be \u201c\ufb01nancially independent;\u201d possible income from pension \nplans (including the CPP); possible income from ..."
       ],
       "sources": [
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 58,
-          "score": 0.6088209,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Avoid the mindset of only saving \u201cwhat\u2019s left over\u201d \nonce your bills are paid. Determine what your \nsavings goal is, and actively put the appropriate \namount of money towards that each pay. If you\u2019re ..."
         },
         {
-          "source": "finacialliteracybasics.txt",
-          "chunk_id": 59,
-          "score": 0.58723533,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 16,
-          "score": 0.56390095,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "if it\u2019s a paid-off car). \n \n4. Then pay your secured debts (car loan) so it will not be repossessed. If you have a good \npayment history, ask the lender if you can skip a month or tack a month onto en..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 14,
-          "score": 0.55803317,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "4. Once you pay off a loan, keep paying that amount \u2013 to your savings account instead. \n5. Put all extra money (bonuses, tax refunds, gift money, rebates) into savings. \nThere are three layers of savi..."
         },
         {
-          "source": "financialliteracy101.txt",
-          "chunk_id": 6,
-          "score": 0.5362159,
-          "text": "making minimum payments on the rest. Once the smallest is gone, roll that \npayment into the next smallest.\n\u2022 \nCard A: $500 @ 15%\n\u2022 \nCard B: $1,200 @ 18%\n\u2022 \nCard C: $2,000 @ 22%\nStart with Card A, then..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "8% \n12% \n18% \n2% \n61 \n70 \n93 \n3% \n38 \n41 \n47 \n5% \n21 \n23 \n24 \n10% \n10 \n11 \n11 \nMonthly Payment \n% of Balance Paid \nFour Cornerstones of Financial Literacy \u2013 Version I.4 \nPage 17 \nPRIORITIZE YOUR DEBTS..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "reduce those risks?\nDiscuss\nWe encourage you to look ahead to your \ufb01nan-\ncial future not so much as \u201cplanning to retire\u201d but \nrather planning to build up \u201cnon-working\u201d sources of \nincome so that you c..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "usually be greater than the interest you earn on \nyour investments. It may make sense to give up the \ninvestment to do away with the debt. \n\u2022 Seek some professional advice and counselling if \nyou can ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "There are a number of factors to consider, such as: how much money you\u2019ll \nneed each year to be \u201c\ufb01nancially independent;\u201d possible income from pension \nplans (including the CPP); possible income from ..."
         }
       ],
       "metrics": {
@@ -614,44 +867,51 @@
     {
       "query": "If I save $200 per month at 5% interest for 15 years, how much will I accumulate?",
       "expected_answer": "Approximately $53,400 using monthly compounding and the future value of an annuity formula.",
-      "actual_answer": "To calculate how much you will accumulate by saving $200 per month at a 5% annual interest rate over 15 years, we can use the future value of an annuity formula. This formula takes into account regular contributions and interest compounding.\n\nThe formula is:\n\n\\[\nFV = P \\times \\frac{(1 + r)^n - 1}{r}\n\\]\n\nWhere:\n- \\(FV\\) = future value\n- \\(P\\) = monthly contribution ($200)\n- \\(r\\) = monthly interest rate (annual rate / 12 months)\n- \\(n\\) = total number of contributions (number of years \u00d7 12 months)\n\n1. First, calculate the monthly interest rate:\n   - Annual interest rate = 5% = 0.05\n   - Monthly interest rate \\(r = \\frac{0.05}{12} \\approx 0.004167\\)\n\n2. Calculate the total number of contributions over 15 years:\n   - \\(n = 15 \\times 12 = 180\\) months\n\n3. Plug these values into the formula:\n   \\[\n   FV = 200 \\times \\frac{(1 + 0.004167)^{180} - 1}{0.004167}\n   \\]\n\n4. Calculating it step by step:\n   - \\((1 + 0.004167)^{180} \\approx 2.113564\\)\n   - So, \\(FV \\approx 200 \\times \\frac{2.113564 - 1}{0.004167}\\)\n   - \\(FV \\approx 200 \\times \\frac{1.113564}{0.004167} \\approx 200 \\times 267.250\\)\n   - \\(FV \\approx 53,450.43\\)\n\nSo, by saving $200 per month at a 5% interest rate for 15 years, you will accumulate approximately **$53,450.43**. \n\nThat's a great strategy! Consistent savings combined with the power of compound interest can really add up over time. Keep it up!",
+      "actual_answer": "To determine how much you will accumulate by saving $200 per month at a 5% interest rate over 15 years, we can use the future value of a series formula, which accounts for regular monthly contributions and compound interest.\n\nThe formula for the future value of a series (like monthly savings) is:\n\n\\[ FV = P \\times \\frac{(1 + r)^n - 1}{r} \\]\n\nWhere:\n- \\( FV \\) = future value\n- \\( P \\) = monthly contribution ($200)\n- \\( r \\) = monthly interest rate (annual rate / 12 months)\n- \\( n \\) = total number of contributions (months)\n\nLet's break it down:\n\n1. **Monthly Interest Rate**: 5% annual interest rate = 0.05 / 12 = 0.0041667\n2. **Total Contributions**: 15 years = 15 \u00d7 12 = 180 months\n\nNow plug in the numbers:\n\n\\[ FV = 200 \\times \\frac{(1 + 0.0041667)^{180} - 1}{0.0041667} \\]\n\nCalculating this:\n\n1. Calculate \\( (1 + 0.0041667)^{180} \\):\n   - This equals approximately 2.1136.\n\n2. Now calculate the rest:\n   \\[ FV = 200 \\times \\frac{2.1136 - 1}{0.0041667} \\]\n   \\[ FV = 200 \\times \\frac{1.1136}{0.0041667} \\]\n   \\[ FV = 200 \\times 267.248 \\]\n   \\[ FV \\approx 53,449.60 \\]\n\nSo, if you save $200 per month at a 5% interest rate for 15 years, you will accumulate approximately **$53,449.60**. \n\nThat's a great step towards building your savings! If you have any more questions or need further assistance, feel free to ask!",
       "contexts": [
+        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
         "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
-        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
         "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq...",
+        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
         "earned 3% interest, that would end up at about $15,000.\n$ Tip\n175\nMODULE 13\nHow much money are you spending \neach month \u201ceating out\u201c (include  \nlunches at school, etc.)?\nThink About It\nUse the calcula...",
-        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
       ],
       "sources": [
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 634,
-          "score": 0.60583663,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 544,
-          "score": 0.60083723,
-          "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 633,
-          "score": 0.58177054,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 548,
-          "score": 0.537234,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "earned 3% interest, that would end up at about $15,000.\n$ Tip\n175\nMODULE 13\nHow much money are you spending \neach month \u201ceating out\u201c (include  \nlunches at school, etc.)?\nThink About It\nUse the calcula..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 482,
-          "score": 0.5346099,
-          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
         }
       ],
       "metrics": {
@@ -664,44 +924,58 @@
     {
       "query": "What is dollar-cost averaging?",
       "expected_answer": "Dollar-cost averaging is an investment strategy where you invest a fixed amount of money at regular intervals regardless of market price, which helps reduce the impact of market volatility and removes emotional decision-making.",
-      "actual_answer": "Dollar-cost averaging is an investment strategy where you invest a fixed amount of money into a particular investment, like stocks or mutual funds, at regular intervals, regardless of the market price. This approach helps to spread out your purchases over time, which can reduce the impact of volatility on the overall investment.\n\nFor example, instead of investing a lump sum all at once, you might choose to invest $100 every month. If the price of the investment fluctuates, you'll buy more shares when the price is low and fewer shares when the price is high. This averaging effect means that, over time, you might end up with a lower average cost per share than if you tried to time the market.\n\nHere's a simple illustration:\n\n- In the first month, the share price is $10, so you buy 10 shares.\n- In the second month, the price drops to $9, and you buy approximately 11.1 shares.\n- In the third month, the price drops to $8, and you buy 12.5 shares.\n\nBy the end of the three months, you've accumulated more shares than if you had invested the full amount all at once at the higher price. This strategy can help mitigate risks associated with market timing and is often considered a disciplined approach to investing. \n\nOverall, dollar-cost averaging encourages a long-term investment mindset and can be a great way to build wealth gradually.",
+      "actual_answer": "Dollar-cost averaging is an investment strategy where you invest a fixed amount of money at regular intervals, regardless of the price of the investment. This method helps to reduce the impact of volatility in the market because you end up buying more shares when prices are low and fewer shares when prices are high.\n\nFor example, let\u2019s say you decide to invest $100 each month into a mutual fund. If the share price varies, here's how it works:\n\n- In the first month, the share price might be $10, so you buy 10 shares.\n- In the second month, if the price drops to $9, you buy about 11.1 shares.\n- In the third month, if the price goes up to $11, you buy about 9.1 shares.\n\nBy the end of the year, you\u2019ve accumulated different amounts of shares based on the fluctuating prices, which can lead to a lower average cost per share over time.\n\nThis strategy can help mitigate the risk of making poor investment decisions based on market timing or emotional reactions. It\u2019s a disciplined approach that can be especially beneficial for long-term investors.",
       "contexts": [
         "that is likely to pull back down. With fear, they sell too quickly in response to problems, and by \nthe time they sell, the price has already gone down, so they sell for a loss. Buying at high prices ...",
         "Here\u2019s an example of how it works: if you decided to invest your $1200 tax refund in a no-load \nmutual fund, you could put all $1200 in today and buy shares at today\u2019s price ($10 per share = \n120 shar...",
         "and fewer shares when the price is high. After one year, you have bought 171.7 shares, not 120. \n \nDiversified stock mutual funds (like no-load index funds) have consistently risen over time if \nyou a...",
         "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
-        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
+        "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ...",
+        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
+        "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves..."
       ],
       "sources": [
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 216,
-          "score": 0.68942285,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "that is likely to pull back down. With fear, they sell too quickly in response to problems, and by \nthe time they sell, the price has already gone down, so they sell for a loss. Buying at high prices ..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 217,
-          "score": 0.64650536,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "Here\u2019s an example of how it works: if you decided to invest your $1200 tax refund in a no-load \nmutual fund, you could put all $1200 in today and buy shares at today\u2019s price ($10 per share = \n120 shar..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 218,
-          "score": 0.5172141,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "and fewer shares when the price is high. After one year, you have bought 171.7 shares, not 120. \n \nDiversified stock mutual funds (like no-load index funds) have consistently risen over time if \nyou a..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 87,
-          "score": 0.43229592,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 88,
-          "score": 0.39549744,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves..."
         }
       ],
       "metrics": {
@@ -714,44 +988,72 @@
     {
       "query": "How do I start building credit?",
       "expected_answer": "Start by getting a secured credit card or becoming an authorized user on someone's card, make small purchases, pay the full balance on time every month, and keep credit utilization below 30% to build a positive credit history.",
-      "actual_answer": "Building credit is a crucial step for your financial future, and it's great that you're looking to get started! Here are some actionable steps you can take to begin building your credit:\n\n1. **Open a Credit Card**: If you don't already have one, consider applying for a credit card. Look for options that are designed for beginners, such as secured credit cards or student credit cards. These often have lower limits and are easier to qualify for.\n\n2. **Use Your Credit Wisely**: Once you have a credit card, use it for small purchases that you can afford to pay off in full each month. This will help you establish a positive payment history. Remember to keep your credit utilization low\u2014ideally below 30% of your total credit limit. For example, if your limit is $1,000, try to keep your balance below $300.\n\n3. **Pay Your Bills on Time**: This is the most important factor in building a good credit score. Set up automatic payments or reminders to ensure you never miss a due date. Consistently paying your bills on time will positively impact your credit history.\n\n4. **Monitor Your Credit Report**: You can request a free credit report annually from the three major credit bureaus\u2014Experian, Equifax, and TransUnion\u2014at AnnualCreditReport.com. Regularly checking your report helps you catch any errors and track your progress.\n\n5. **Consider Other Forms of Credit**: If you rent an apartment or pay utility bills, make sure to pay them on time. These payments can also contribute to your credit history. In some cases, you can ask your landlord or utility companies to report your payment history to credit bureaus.\n\n6. **Limit Credit Applications**: Avoid applying for multiple credit accounts at once, as this can negatively impact your score. Focus on building credit with one or two accounts first.\n\n7. **Be Patient**: Building a good credit score takes time, so be patient and consistent with your efforts.\n\nBy following these steps, you'll be on your way to establishing a solid credit history, which can open doors for future financial opportunities like favorable loan rates and credit offers. If you have any more questions or need further guidance, feel free to ask!",
+      "actual_answer": "Building credit is an important step towards achieving financial health, and it's great that you're looking to start! Here are some practical steps you can take to begin establishing a good credit history:\n\n1. **Get a Credit Card**: Consider applying for a secured credit card if you're just starting out. This type of card requires a cash deposit as collateral, which reduces risk for the lender. Use the card for small purchases and pay off the balance in full each month to avoid interest charges.\n\n2. **Pay Your Bills on Time**: Timely payments are the most significant factor in building a positive credit score. Set reminders or automate payments to ensure you never miss a due date.\n\n3. **Keep Credit Utilization Low**: Try to use less than 30% of your available credit. For example, if your credit limit is $1,000, aim to keep your balance below $300. This shows lenders that you are responsible with credit.\n\n4. **Monitor Your Credit Report**: You can request a free credit report each year from the three major credit bureaus\u2014Experian, Equifax, and TransUnion\u2014at AnnualCreditReport.com. Regularly checking your report helps you spot errors or signs of fraud.\n\n5. **Consider a Credit Builder Loan**: Some banks and credit unions offer credit builder loans, which are specifically designed to help individuals establish credit. The borrowed amount is held in a savings account until you repay the loan.\n\n6. **Maintain Older Accounts**: If you have any existing credit accounts, keep them open and use them occasionally. A longer credit history can positively impact your score.\n\n7. **Avoid Multiple Applications**: Each time you apply for credit, a hard inquiry is made on your credit report, which can temporarily lower your score. Try to limit your applications to one at a time.\n\n8. **Use Alternative Credit Data**: If you\u2019re having trouble getting traditional credit, you could ask your landlord or utility companies to provide letters stating your payment history, as this can help strengthen your credit application.\n\nRemember, building credit takes time, so be patient and consistent with your efforts. Good luck on your journey to establishing a strong credit profile!",
       "contexts": [
         "You can request a free credit report each year from the three major credit bureaus\u2014\nExperian, Equifax, and TransUnion\u2014at AnnualCreditReport.com. You can also monitor \nyour score through free services ...",
-        "and pay off the bills promptly and fully each month. \nIn this way, a good credit rating can begin to be \nestablished even at a relatively young age. \nMany people borrow money by using a credit \ncard o...",
-        "contact whomever it is you owe money to. Let them know you are having some dif\ufb01culty. \nSee if they can work with you to help. Try to do that before the matter is put in the hands of a \ncollection agen...",
         "as you can, to build a good credit rating.\nTake Act ion. \n  Take Control!\nTake Act ion. \n  Take Control!\n\u2022 Repay your debts and make payments on time\n\u2022 Don\u2019t borrow more than you can afford\n\u2022 Set a bo...",
-        "good credit risk. Keep copies of paid bills and cancelled checks showing that you have paid \nmonthly bills (like rent and utilities) on time. Ask your landlord and each utility company to send \nyou a ..."
+        "and pay off the bills promptly and fully each month. \nIn this way, a good credit rating can begin to be \nestablished even at a relatively young age. \nMany people borrow money by using a credit \ncard o...",
+        "good credit risk. Keep copies of paid bills and cancelled checks showing that you have paid \nmonthly bills (like rent and utilities) on time. Ask your landlord and each utility company to send \nyou a ...",
+        "contact whomever it is you owe money to. Let them know you are having some dif\ufb01culty. \nSee if they can work with you to help. Try to do that before the matter is put in the hands of a \ncollection agen...",
+        "can lower your score.\nUse credit regularly, but responsibly. Using a credit card for small purchases \nand paying it o\ufb00 in full each month helps build history without racking up debt.\nMaintain older ac...",
+        "MORTGAGE OPTIONS\nYour credit score directly impacts your loan eligibility and interest rate because \nit re\ufb02ects how reliably you\u2019ve handled debt in the past. A higher score signals \nto lenders that yo...",
+        "Thinkabout... or Discuss:\n\u2022 How can a young person build a good credit rating?\n\u2022 Is it too easy for young people to get credit these days?\n\u2022 What leads some young people to get into debt \ndif\ufb01culties ...",
+        "\uf0b7 \nCredit Card Tricks to Avoid \n \nConsumer Protection & Financial Institutions \n\uf0b7 \nNew Banking Tricks: Check 21 and bounce protection \n\uf0b7 \nNew Insurance Tricks: Dropping You for Claims and Selling Fear..."
       ],
       "sources": [
         {
-          "source": "financialliteracy101.txt",
-          "chunk_id": 4,
-          "score": 0.6259924,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "You can request a free credit report each year from the three major credit bureaus\u2014\nExperian, Equifax, and TransUnion\u2014at AnnualCreditReport.com. You can also monitor \nyour score through free services ..."
         },
         {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 524,
-          "score": 0.61266756,
-          "text": "and pay off the bills promptly and fully each month. \nIn this way, a good credit rating can begin to be \nestablished even at a relatively young age. \nMany people borrow money by using a credit \ncard o..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 519,
-          "score": 0.60827005,
-          "text": "contact whomever it is you owe money to. Let them know you are having some dif\ufb01culty. \nSee if they can work with you to help. Try to do that before the matter is put in the hands of a \ncollection agen..."
-        },
-        {
-          "source": "moneyandyouth.txt",
-          "chunk_id": 520,
-          "score": 0.59672,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "as you can, to build a good credit rating.\nTake Act ion. \n  Take Control!\nTake Act ion. \n  Take Control!\n\u2022 Repay your debts and make payments on time\n\u2022 Don\u2019t borrow more than you can afford\n\u2022 Set a bo..."
         },
         {
-          "source": "fourcornerstonesoffinancialliteracy.txt",
-          "chunk_id": 222,
-          "score": 0.58801574,
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "and pay off the bills promptly and fully each month. \nIn this way, a good credit rating can begin to be \nestablished even at a relatively young age. \nMany people borrow money by using a credit \ncard o..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
           "text": "good credit risk. Keep copies of paid bills and cancelled checks showing that you have paid \nmonthly bills (like rent and utilities) on time. Ask your landlord and each utility company to send \nyou a ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "contact whomever it is you owe money to. Let them know you are having some dif\ufb01culty. \nSee if they can work with you to help. Try to do that before the matter is put in the hands of a \ncollection agen..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "can lower your score.\nUse credit regularly, but responsibly. Using a credit card for small purchases \nand paying it o\ufb00 in full each month helps build history without racking up debt.\nMaintain older ac..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "MORTGAGE OPTIONS\nYour credit score directly impacts your loan eligibility and interest rate because \nit re\ufb02ects how reliably you\u2019ve handled debt in the past. A higher score signals \nto lenders that yo..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Thinkabout... or Discuss:\n\u2022 How can a young person build a good credit rating?\n\u2022 Is it too easy for young people to get credit these days?\n\u2022 What leads some young people to get into debt \ndif\ufb01culties ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "\uf0b7 \nCredit Card Tricks to Avoid \n \nConsumer Protection & Financial Institutions \n\uf0b7 \nNew Banking Tricks: Check 21 and bounce protection \n\uf0b7 \nNew Insurance Tricks: Dropping You for Claims and Selling Fear..."
         }
       ],
       "metrics": {

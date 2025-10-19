@@ -198,6 +198,7 @@ def log_to_langsmith(
                     "metrics": metrics,
                     "metadata": {
                         "evaluation_type": "RAGAS",
+                        "retrieval_mode": mode,
                         "num_contexts": len(contexts),
                         "faithfulness": metrics.get("faithfulness", 0.0),
                         "answer_relevancy": metrics.get("answer_relevancy", 0.0),
@@ -215,21 +216,23 @@ def log_to_langsmith(
         print(f"  ⚠️  LangSmith logging failed: {e}")
 
 
-def evaluate_with_ragas(test_set_path: str) -> Dict[str, Any]:
+def evaluate_with_ragas(test_set_path: str, mode: str = "base") -> Dict[str, Any]:
     """
     Evaluate MoneyMentor RAG pipeline with RAGAS metrics.
     
     Args:
         test_set_path: Path to golden test set JSONL file
+        mode: Retrieval mode - "base" or "advanced" (default: "base")
         
     Returns:
         Dict containing:
         - results: List of per-query results
         - summary: Aggregate metrics
         - timestamp: Evaluation timestamp
+        - mode: Retrieval mode used
     """
     print("=" * 80)
-    print("MoneyMentor RAG Evaluation with RAGAS")
+    print(f"MoneyMentor RAG Evaluation with RAGAS (Mode: {mode.upper()})")
     print("=" * 80)
     print()
     
@@ -237,11 +240,12 @@ def evaluate_with_ragas(test_set_path: str) -> Dict[str, Any]:
     print(f"📂 Loading test set: {test_set_path}")
     golden_entries = load_golden_set(test_set_path)
     print(f"✅ Loaded {len(golden_entries)} test queries")
+    print(f"🔧 Retrieval mode: {mode}")
     print()
     
     # Initialize results
     all_results = []
-    run_name = f"MoneyMentor RAG Evaluation - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    run_name = f"MoneyMentor RAG Evaluation ({mode}) - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     
     print("=" * 80)
     print("Running Evaluation...")
@@ -256,8 +260,8 @@ def evaluate_with_ragas(test_set_path: str) -> Dict[str, Any]:
         print(f"[{i}/{len(golden_entries)}] {query[:70]}...")
         
         try:
-            # Call RAG pipeline
-            rag_response = get_finance_answer(query, k=5)
+            # Call RAG pipeline with specified mode
+            rag_response = get_finance_answer(query, k=5, mode=mode)
             
             actual_answer = rag_response.get('answer', '')
             sources = rag_response.get('sources', [])
@@ -342,6 +346,7 @@ def evaluate_with_ragas(test_set_path: str) -> Dict[str, Any]:
     evaluation_results = {
         "timestamp": datetime.now().isoformat(),
         "test_set": test_set_path,
+        "mode": mode,
         "total_queries": len(golden_entries),
         "successful": len(successful_results),
         "failed": len(golden_entries) - len(successful_results),
@@ -388,27 +393,43 @@ if __name__ == "__main__":
     """CLI entrypoint for running evaluation."""
     import sys
     
-    # Default test set path
+    # Default values
     test_set_path = "evaluation/golden_set.jsonl"
+    mode = "base"
     
-    # Allow override via command line
+    # Parse command line arguments
     if len(sys.argv) > 1:
-        test_set_path = sys.argv[1]
+        mode = sys.argv[1]  # First arg is mode
+    if len(sys.argv) > 2:
+        test_set_path = sys.argv[2]  # Second arg is test set path
+    
+    # Validate mode
+    if mode not in ["base", "advanced"]:
+        print(f"❌ Error: Invalid mode '{mode}'. Must be 'base' or 'advanced'")
+        print()
+        print("Usage:")
+        print("  python -m app.evaluation.evaluator [mode] [test_set_path]")
+        print()
+        print("Examples:")
+        print("  python -m app.evaluation.evaluator base")
+        print("  python -m app.evaluation.evaluator advanced")
+        print("  python -m app.evaluation.evaluator base evaluation/golden_set.jsonl")
+        sys.exit(1)
     
     # Check if file exists
     if not os.path.exists(test_set_path):
         print(f"❌ Error: Test set file not found: {test_set_path}")
         print()
         print("Usage:")
-        print("  python -m app.evaluation.evaluator [test_set_path]")
+        print("  python -m app.evaluation.evaluator [mode] [test_set_path]")
         print()
         print("Example:")
-        print("  python -m app.evaluation.evaluator evaluation/golden_set.jsonl")
+        print("  python -m app.evaluation.evaluator base evaluation/golden_set.jsonl")
         sys.exit(1)
     
     # Run evaluation
     try:
-        results = evaluate_with_ragas(test_set_path)
+        results = evaluate_with_ragas(test_set_path, mode=mode)
         sys.exit(0)
     except Exception as e:
         print(f"❌ Evaluation failed: {e}")

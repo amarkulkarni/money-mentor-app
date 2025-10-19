@@ -28,12 +28,13 @@ from qdrant_client.models import PointStruct
 
 # LangSmith tracking
 try:
-    from langsmith import Client
+    from langsmith import Client, traceable
     langsmith_client = Client()
     HAS_LANGSMITH = True
 except ImportError:
     HAS_LANGSMITH = False
     langsmith_client = None
+    traceable = lambda *args, **kwargs: lambda f: f  # No-op decorator
     logger.warning("LangSmith not available - tracking will be disabled")
 
 # Import local modules
@@ -424,6 +425,11 @@ def get_retriever(mode: str = "base", collection_name: str = COLLECTION_NAME, k:
     return get_base_retriever(collection_name, k)
 
 
+@traceable(
+    name="MoneyMentor_RAG",
+    run_type="chain",
+    tags=["moneymentor", "rag"]
+)
 def get_finance_answer(
     query: str,
     k: int = 5,
@@ -561,50 +567,25 @@ Remember: You are MoneyMentor, here to help people make informed financial decis
         
         logger.info("✅ Answer generated successfully")
         
-        # Log to LangSmith
-        if HAS_LANGSMITH:
-            try:
-                langsmith_client.create_run(
-                    name=f"MoneyMentor_RAG_{mode}",
-                    run_type="chain",
-                    inputs={
-                        "query": query,
-                        "mode": mode,
-                        "k": k,
-                        "collection": collection_name
-                    },
-                    outputs={
-                        "answer": answer_text,
-                        "num_docs": len(docs),
-                        "num_sources": len(sources)
-                    },
-                    extra={
-                        "context": context[:500] + "..." if len(context) > 500 else context,
-                        "sources": sources,
-                        "metadata": {
-                            "retriever_mode": mode,
-                            "model": CHAT_MODEL,
-                            "embedding_model": EMBEDDING_MODEL,
-                            "docs_retrieved": len(docs)
-                        }
-                    },
-                    tags=["moneymentor", "rag", f"{mode}_retriever"]
-                )
-                logger.info(f"   📊 Logged to LangSmith (mode: {mode})")
-            except Exception as e:
-                logger.warning(f"   ⚠️  LangSmith logging failed: {e}")
-        
         result = {
             "answer": answer_text,
             "sources": sources,
             "query": query,
             "model": CHAT_MODEL,
-            "mode": mode
+            "mode": mode,
+            "metadata": {
+                "retriever_mode": mode,
+                "num_docs": len(docs),
+                "num_sources": len(sources),
+                "k": k
+            }
         }
         
         # Add contexts for evaluation if requested
         if return_context:
             result["contexts"] = [doc.page_content for doc in docs]
+        
+        logger.info(f"   📊 LangSmith auto-tracking enabled (mode: {mode})")
         
         return result
         
