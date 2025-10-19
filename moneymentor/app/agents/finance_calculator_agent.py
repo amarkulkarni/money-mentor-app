@@ -144,13 +144,98 @@ def parse_investment_query(query: str) -> Optional[Dict[str, float]]:
     }
 
 
+def parse_lump_sum_query(query: str) -> Optional[Dict[str, float]]:
+    """
+    Parse lump sum investment queries (one-time investments).
+    
+    Supports queries like:
+    - "If I invest $1000 at 7% for 5 years"
+    - "Invest 5000 at current rates for 10 years"
+    - "$10,000 at 6.5% for 3 years"
+    
+    Args:
+        query: Natural language query string
+        
+    Returns:
+        Dictionary with 'principal', 'annual_rate', 'years' or None if parsing fails
+    """
+    query_lower = query.lower()
+    
+    # Check if it's NOT a monthly contribution
+    monthly_indicators = ['per month', 'monthly', '/month', 'a month', 'each month']
+    if any(indicator in query_lower for indicator in monthly_indicators):
+        return None  # This is a monthly contribution, not lump sum
+    
+    # Pattern 1: Extract principal (lump sum amount)
+    # Matches: invest $1000, I invest $5,000, $10000
+    principal_patterns = [
+        r'invest\s+\$?(\d{1,10}(?:,\d{3})*(?:\.\d{2})?)',
+        r'\$(\d{1,10}(?:,\d{3})*(?:\.\d{2})?)\s+at',
+        r'principal\s+(?:of\s+)?\$?(\d{1,10}(?:,\d{3})*(?:\.\d{2})?)',
+    ]
+    
+    principal = None
+    for pattern in principal_patterns:
+        match = re.search(pattern, query_lower)
+        if match:
+            principal = float(match.group(1).replace(',', ''))
+            break
+    
+    # Pattern 2: Extract annual rate
+    # Try to get "current rates" from context or default
+    rate_patterns = [
+        r'(?:at|@|with|earning|return(?:ing)?)\s+(\d+(?:\.\d+)?)\s*%',
+        r'(\d+(?:\.\d+)?)\s*%\s*(?:annual|yearly|per year)?',
+        r'(\d+(?:\.\d+)?)\s*percent',
+    ]
+    
+    annual_rate = None
+    for pattern in rate_patterns:
+        match = re.search(pattern, query_lower)
+        if match:
+            annual_rate = float(match.group(1))
+            break
+    
+    # Check for "current rates" - this means we need live data
+    if annual_rate is None and ('current' in query_lower or 'today' in query_lower):
+        # Signal that this needs live rate lookup (will be handled by caller)
+        annual_rate = -1  # Special flag for "needs live data"
+    
+    # Pattern 3: Extract years
+    year_patterns = [
+        r'(?:for|over|in)\s+(\d+)\s*years?',
+        r'(\d+)\s*years?',
+    ]
+    
+    years = None
+    for pattern in year_patterns:
+        match = re.search(pattern, query_lower)
+        if match:
+            years = int(match.group(1))
+            break
+    
+    # Return None if any required parameter is missing
+    if principal is None or years is None:
+        return None
+    
+    return {
+        'principal': principal,
+        'annual_rate': annual_rate,
+        'years': years
+    }
+
+
 def run_calculation_query(query: str) -> Dict[str, Any]:
     """
     High-level wrapper that parses natural language queries and returns calculations.
     
+    Handles both:
+    - Monthly contributions (annuity): "invest $500 per month"
+    - Lump sum investments: "invest $1000" (one-time)
+    
     This function:
     1. Parses the natural language query
-    2. Extracts parameters (monthly contribution, rate, years)
+    2. Extracts parameters (amount, rate, years)
     3. Calculates future value
     4. Returns structured result
     
@@ -169,12 +254,53 @@ def run_calculation_query(query: str) -> Dict[str, Any]:
         >>> print(f"${result['result']:,.2f}")
         $260,463.12
         
-        >>> result = run_calculation_query("1000 per month at 8% for 30 years")
+        >>> result = run_calculation_query("Invest $1000 at 7% for 5 years")
         >>> print(result['explanation'])
-        Investing $1,000.00/month at 8.0% annual return for 30 years:
+        Investing $1,000.00 at 7.0% annual return for 5 years (compounded 12x/year):
         ...
     """
-    # Parse the query
+    # Try parsing as lump sum first
+    lump_sum_params = parse_lump_sum_query(query)
+    
+    if lump_sum_params:
+        # Check if it needs live rate data
+        if lump_sum_params['annual_rate'] == -1:
+            return {
+                'success': False,
+                'result': None,
+                'explanation': (
+                    "I need a live interest rate to calculate this. "
+                    "Please specify a rate or let me search for current rates."
+                ),
+                'parameters': lump_sum_params,
+                'needs_live_data': True
+            }
+        
+        # Calculate compound interest for lump sum
+        try:
+            future_value, explanation = calculate_compound_interest(
+                principal=lump_sum_params['principal'],
+                annual_rate=lump_sum_params['annual_rate'],
+                years=lump_sum_params['years']
+            )
+            
+            return {
+                'success': True,
+                'result': round(future_value, 2),
+                'explanation': explanation,
+                'parameters': lump_sum_params,
+                'investment_type': 'lump_sum'
+            }
+            
+        except Exception as e:
+            return {
+                'success': False,
+                'result': None,
+                'explanation': f"Error calculating lump sum: {str(e)}",
+                'parameters': lump_sum_params
+            }
+    
+    # Try parsing as monthly contribution
     params = parse_investment_query(query)
     
     if params is None:
@@ -183,14 +309,14 @@ def run_calculation_query(query: str) -> Dict[str, Any]:
             'result': None,
             'explanation': (
                 "I couldn't parse that query. Please try a format like:\n"
-                "• 'If I invest $500 a month at 7% for 20 years, how much?'\n"
-                "• 'Invest 1000 per month at 8% for 30 years'\n"
+                "• Monthly: 'If I invest $500 a month at 7% for 20 years, how much?'\n"
+                "• Lump sum: 'If I invest $1000 at 7% for 5 years, how much?'\n"
                 "• '$200/month at 5% return for 10 years'"
             ),
             'parameters': None
         }
     
-    # Calculate future value
+    # Calculate future value for monthly contributions
     try:
         future_value, explanation = calculate_future_value(
             monthly_contrib=params['monthly_contrib'],
@@ -202,7 +328,8 @@ def run_calculation_query(query: str) -> Dict[str, Any]:
             'success': True,
             'result': round(future_value, 2),
             'explanation': explanation,
-            'parameters': params
+            'parameters': params,
+            'investment_type': 'monthly'
         }
         
     except Exception as e:

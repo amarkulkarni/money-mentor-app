@@ -60,12 +60,22 @@ def run_finance_calculator(query: str) -> str:
     """
     Handle financial calculation queries using the finance calculator agent.
     
+    Supports TWO types of investments:
+    1. Monthly contributions (annuity): "invest $500 per month at 7% for 20 years"
+    2. Lump sum (one-time): "invest $1000 at 7% for 5 years"
+    
+    IMPORTANT: This tool requires a SPECIFIC interest rate (e.g., 7%, 5.5%).
+    If the query asks for "current rates" or "today's rates", you must:
+    1. First use tavily_search_tool to find the current rate
+    2. Then call this tool with the specific rate
+    
     Examples:
     - "If I invest $500/month at 7% for 20 years, how much will I have?"
     - "Calculate compound interest on $10,000 at 5% for 10 years"
+    - "Invest $1000 at 6.5% for 5 years"
     
     Args:
-        query: Natural language financial calculation query
+        query: Natural language financial calculation query WITH a specific rate
         
     Returns:
         Concise plain-English result with calculations
@@ -81,9 +91,17 @@ def run_finance_calculator(query: str) -> str:
         if result.get("success"):
             # Format the response in plain English
             explanation = result.get("explanation", "")
+            investment_type = result.get("investment_type", "")
             return f"✅ {explanation}"
+        elif result.get("needs_live_data"):
+            # Calculator detected query needs current rates
+            return (
+                "❌ This calculation requires current interest rates. "
+                "I need to search for the current rate first, then I can calculate the returns."
+            )
         else:
-            return f"❌ Could not parse calculation from query. Please provide details like amount, rate, and time period."
+            explanation = result.get("explanation", "Could not parse calculation from query.")
+            return f"❌ {explanation}"
             
     except Exception as e:
         logger.error(f"Error in finance_calculator: {e}")
