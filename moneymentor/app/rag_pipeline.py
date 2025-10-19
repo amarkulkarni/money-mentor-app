@@ -20,9 +20,21 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import Document
+from langchain.retrievers.multi_query import MultiQueryRetriever
+from langchain_community.vectorstores import Qdrant
 
 # Qdrant imports
 from qdrant_client.models import PointStruct
+
+# LangSmith tracking
+try:
+    from langsmith import Client
+    langsmith_client = Client()
+    HAS_LANGSMITH = True
+except ImportError:
+    HAS_LANGSMITH = False
+    langsmith_client = None
+    logger.warning("LangSmith not available - tracking will be disabled")
 
 # Import local modules
 from data_loader import DataLoader
@@ -313,29 +325,134 @@ def load_knowledge(
         }
 
 
+def get_base_retriever(collection_name: str = COLLECTION_NAME, k: int = 5):
+    """
+    Create a base similarity search retriever.
+    
+    Args:
+        collection_name: Qdrant collection name
+        k: Number of documents to retrieve
+        
+    Returns:
+        Base retriever using similarity search
+    """
+    logger.info("🔍 Using Base Retriever (similarity search)")
+    
+    # Get Qdrant client and embeddings
+    client = get_qdrant_client()
+    api_key = os.getenv("OPENAI_API_KEY")
+    embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, openai_api_key=api_key)
+    
+    # Create Qdrant vectorstore
+    # Specify content_payload_key="text" to match our stored data format
+    # Our data has source/chunk_id at top level of payload, not nested
+    vectorstore = Qdrant(
+        client=client,
+        collection_name=collection_name,
+        embeddings=embeddings,
+        content_payload_key="text"
+    )
+    
+    return vectorstore.as_retriever(search_kwargs={"k": k})
+
+
+def get_advanced_retriever(collection_name: str = COLLECTION_NAME, k: int = 5):
+    """
+    Create an advanced MultiQueryRetriever for better query expansion.
+    
+    This retriever generates multiple query variations to improve retrieval quality.
+    
+    Args:
+        collection_name: Qdrant collection name
+        k: Number of documents to retrieve per query variation
+        
+    Returns:
+        Advanced MultiQuery retriever
+    """
+    logger.info("🚀 Using Advanced Retriever (MultiQuery with expansion)")
+    
+    # Get Qdrant client and embeddings
+    client = get_qdrant_client()
+    api_key = os.getenv("OPENAI_API_KEY")
+    embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, openai_api_key=api_key)
+    
+    # Create Qdrant vectorstore
+    # Specify content_payload_key="text" to match our stored data format
+    # Our data has source/chunk_id at top level of payload, not nested
+    vectorstore = Qdrant(
+        client=client,
+        collection_name=collection_name,
+        embeddings=embeddings,
+        content_payload_key="text"
+    )
+    
+    # Create LLM for query generation
+    llm = ChatOpenAI(
+        model=CHAT_MODEL,
+        temperature=0.7,
+        openai_api_key=api_key
+    )
+    
+    # Create base retriever
+    base_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
+    
+    # Wrap with MultiQueryRetriever for query expansion
+    advanced_retriever = MultiQueryRetriever.from_llm(
+        retriever=base_retriever,
+        llm=llm
+    )
+    
+    logger.info("   ✓ MultiQuery will generate query variations for better retrieval")
+    
+    return advanced_retriever
+
+
+def get_retriever(mode: str = "base", collection_name: str = COLLECTION_NAME, k: int = 5):
+    """
+    Get retriever based on mode selection.
+    
+    Args:
+        mode: "base" for similarity search, "advanced" for MultiQuery
+        collection_name: Qdrant collection name
+        k: Number of documents to retrieve
+        
+    Returns:
+        Configured retriever
+    """
+    if mode == "advanced":
+        return get_advanced_retriever(collection_name, k)
+    return get_base_retriever(collection_name, k)
+
+
 def get_finance_answer(
     query: str,
     k: int = 5,
-    collection_name: str = COLLECTION_NAME
+    collection_name: str = COLLECTION_NAME,
+    mode: str = "base",
+    return_context: bool = False
 ) -> Dict[str, Any]:
     """
     Get an answer to a financial question using RAG pipeline.
     
     This function implements the query workflow:
-    1. Generate embedding for user query
+    1. Generate embedding for user query (or use MultiQuery for expansion)
     2. Search Qdrant for k most similar document chunks
     3. Build context from retrieved chunks
     4. Generate answer using GPT-4o-mini with context
+    5. Log to LangSmith for tracking and comparison
     
     Args:
         query: User's financial question
         k: Number of relevant chunks to retrieve
         collection_name: Qdrant collection to search
+        mode: "base" for similarity search, "advanced" for MultiQuery expansion
+        return_context: If True, return contexts for evaluation
         
     Returns:
         Dictionary containing answer and sources
     """
     logger.info(f"🔍 Processing query: '{query}'")
+    logger.info(f"   Mode: {mode.upper()}")
     
     try:
         # Check for OpenAI API key
@@ -346,50 +463,58 @@ def get_finance_answer(
                 "answer": "Error: OpenAI API key not configured. Please set OPENAI_API_KEY environment variable.",
                 "sources": [],
                 "query": query,
-                "model": "error"
+                "model": "error",
+                "mode": mode
             }
         
-        # Initialize embeddings
-        embeddings = OpenAIEmbeddings(
-            model=EMBEDDING_MODEL,
-            openai_api_key=api_key
-        )
+        # Get retriever based on mode
+        retriever = get_retriever(mode=mode, collection_name=collection_name, k=k)
         
-        # Generate query embedding
-        logger.info("🧮 Generating query embedding...")
-        query_vector = embeddings.embed_query(query)
+        # Retrieve relevant documents
+        logger.info(f"🔍 Retrieving documents using {mode} retriever...")
+        docs = retriever.get_relevant_documents(query)
         
-        # Search Qdrant for similar chunks
-        logger.info(f"🔍 Searching for top {k} relevant chunks...")
-        results = search_points(collection_name, query_vector, top_k=k)
-        
-        if not results:
+        if not docs:
             logger.warning("⚠️  No relevant context found in knowledge base")
+            answer = "I apologize, but I couldn't find relevant information in my knowledge base to answer your question. Please ensure the knowledge base has been loaded, or try rephrasing your question."
+            
+            if HAS_LANGSMITH:
+                try:
+                    langsmith_client.create_run(
+                        name=f"MoneyMentor_RAG_{mode}",
+                        run_type="chain",
+                        inputs={"query": query, "mode": mode},
+                        outputs={"answer": answer, "num_docs": 0},
+                        tags=["moneymentor", "rag", f"{mode}_retriever", "no_results"]
+                    )
+                except Exception as e:
+                    logger.warning(f"LangSmith logging failed: {e}")
+            
             return {
-                "answer": "I apologize, but I couldn't find relevant information in my knowledge base to answer your question. Please ensure the knowledge base has been loaded, or try rephrasing your question.",
+                "answer": answer,
                 "sources": [],
                 "query": query,
-                "model": CHAT_MODEL
+                "model": CHAT_MODEL,
+                "mode": mode
             }
         
-        logger.info(f"✅ Found {len(results)} relevant chunk(s)")
+        logger.info(f"✅ Found {len(docs)} relevant document(s)")
         
         # Extract context and prepare sources
         context_chunks = []
         sources = []
         
-        for i, result in enumerate(results):
-            payload = result.get("payload", {})
-            chunk_text = payload.get("text", "")
-            source_file = payload.get("source", "unknown")
-            chunk_id = payload.get("chunk_id", 0)
-            score = result.get("score", 0.0)
+        for i, doc in enumerate(docs):
+            chunk_text = doc.page_content
+            metadata = doc.metadata
+            source_file = metadata.get("source", "unknown")
+            chunk_id = metadata.get("chunk_id", 0)
             
             context_chunks.append(f"[Source {i+1}: {source_file}]\n{chunk_text}")
             sources.append({
                 "source": source_file,
                 "chunk_id": chunk_id,
-                "score": float(score),
+                "score": metadata.get("score", 0.0),
                 "text": chunk_text[:200] + "..." if len(chunk_text) > 200 else chunk_text
             })
         
@@ -436,12 +561,52 @@ Remember: You are MoneyMentor, here to help people make informed financial decis
         
         logger.info("✅ Answer generated successfully")
         
-        return {
+        # Log to LangSmith
+        if HAS_LANGSMITH:
+            try:
+                langsmith_client.create_run(
+                    name=f"MoneyMentor_RAG_{mode}",
+                    run_type="chain",
+                    inputs={
+                        "query": query,
+                        "mode": mode,
+                        "k": k,
+                        "collection": collection_name
+                    },
+                    outputs={
+                        "answer": answer_text,
+                        "num_docs": len(docs),
+                        "num_sources": len(sources)
+                    },
+                    extra={
+                        "context": context[:500] + "..." if len(context) > 500 else context,
+                        "sources": sources,
+                        "metadata": {
+                            "retriever_mode": mode,
+                            "model": CHAT_MODEL,
+                            "embedding_model": EMBEDDING_MODEL,
+                            "docs_retrieved": len(docs)
+                        }
+                    },
+                    tags=["moneymentor", "rag", f"{mode}_retriever"]
+                )
+                logger.info(f"   📊 Logged to LangSmith (mode: {mode})")
+            except Exception as e:
+                logger.warning(f"   ⚠️  LangSmith logging failed: {e}")
+        
+        result = {
             "answer": answer_text,
             "sources": sources,
             "query": query,
-            "model": CHAT_MODEL
+            "model": CHAT_MODEL,
+            "mode": mode
         }
+        
+        # Add contexts for evaluation if requested
+        if return_context:
+            result["contexts"] = [doc.page_content for doc in docs]
+        
+        return result
         
     except Exception as e:
         logger.error(f"❌ Error in get_finance_answer: {e}")
@@ -452,7 +617,8 @@ Remember: You are MoneyMentor, here to help people make informed financial decis
             "answer": f"I apologize, but I encountered an error while processing your question: {str(e)}",
             "sources": [],
             "query": query,
-            "model": "error"
+            "model": "error",
+            "mode": mode
         }
 
 
