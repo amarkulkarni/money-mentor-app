@@ -21,10 +21,16 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import Document
 from langchain.retrievers.multi_query import MultiQueryRetriever
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
 from langchain_community.vectorstores import Qdrant
 
 # Qdrant imports
 from qdrant_client.models import PointStruct
+
+# Configure logging (before LangSmith import so logger is available)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # LangSmith tracking
 try:
@@ -45,10 +51,6 @@ from vectorstore import (
     upsert_points,
     search_points
 )
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Constants
 COLLECTION_NAME = "moneymentor_knowledge"
@@ -359,18 +361,20 @@ def get_base_retriever(collection_name: str = COLLECTION_NAME, k: int = 5):
 
 def get_advanced_retriever(collection_name: str = COLLECTION_NAME, k: int = 5):
     """
-    Create an advanced MultiQueryRetriever for better query expansion.
+    Create an advanced retriever with MultiQuery expansion + Contextual Compression.
     
-    This retriever generates multiple query variations to improve retrieval quality.
+    This retriever uses a two-stage approach:
+    1. MultiQuery: Generates multiple query variations to improve retrieval diversity
+    2. Contextual Compression: Filters retrieved content to focus on query-relevant information
     
     Args:
         collection_name: Qdrant collection name
         k: Number of documents to retrieve per query variation
         
     Returns:
-        Advanced MultiQuery retriever
+        Advanced retriever with MultiQuery + Compression
     """
-    logger.info("🚀 Using Advanced Retriever (MultiQuery with expansion)")
+    logger.info("🚀 Using Advanced Retriever (MultiQuery + Compression)")
     
     # Get Qdrant client and embeddings
     client = get_qdrant_client()
@@ -387,23 +391,31 @@ def get_advanced_retriever(collection_name: str = COLLECTION_NAME, k: int = 5):
         content_payload_key="text"
     )
     
-    # Create LLM for query generation
+    # Create LLM for query generation and compression
     llm = ChatOpenAI(
         model=CHAT_MODEL,
         temperature=0.7,
         openai_api_key=api_key
     )
     
-    # Create base retriever
+    # Step 1: Create base retriever
     base_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
     
-    # Wrap with MultiQueryRetriever for query expansion
-    advanced_retriever = MultiQueryRetriever.from_llm(
+    # Step 2: Wrap with MultiQueryRetriever for query expansion
+    multiquery_retriever = MultiQueryRetriever.from_llm(
         retriever=base_retriever,
         llm=llm
     )
     
-    logger.info("   ✓ MultiQuery will generate query variations for better retrieval")
+    # Step 3: Add contextual compression on top
+    compressor = LLMChainExtractor.from_llm(llm)
+    advanced_retriever = ContextualCompressionRetriever(
+        base_compressor=compressor,
+        base_retriever=multiquery_retriever
+    )
+    
+    logger.info("   ✓ Stage 1: MultiQuery generates query variations")
+    logger.info("   ✓ Stage 2: Compression filters relevant context")
     
     return advanced_retriever
 
@@ -413,7 +425,7 @@ def get_retriever(mode: str = "base", collection_name: str = COLLECTION_NAME, k:
     Get retriever based on mode selection.
     
     Args:
-        mode: "base" for similarity search, "advanced" for MultiQuery
+        mode: "base" for similarity search, "advanced" for MultiQuery + Compression
         collection_name: Qdrant collection name
         k: Number of documents to retrieve
         
@@ -441,7 +453,7 @@ def get_finance_answer(
     Get an answer to a financial question using RAG pipeline.
     
     This function implements the query workflow:
-    1. Generate embedding for user query (or use MultiQuery for expansion)
+    1. Generate embedding for user query (or use MultiQuery + Compression for expansion)
     2. Search Qdrant for k most similar document chunks
     3. Build context from retrieved chunks
     4. Generate answer using GPT-4o-mini with context
@@ -451,7 +463,7 @@ def get_finance_answer(
         query: User's financial question
         k: Number of relevant chunks to retrieve
         collection_name: Qdrant collection to search
-        mode: "base" for similarity search, "advanced" for MultiQuery expansion
+        mode: "base" for similarity search, "advanced" for MultiQuery + Compression
         return_context: If True, return contexts for evaluation
         
     Returns:
