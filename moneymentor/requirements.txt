@@ -27,3 +27,8 @@ pydantic>=2.5.0
 pydantic-settings>=2.1.0
 python-dotenv>=1.0.0
 
+# Evaluation and monitoring
+ragas>=0.1.0
+langsmith>=0.0.70
+requests>=2.31.0
+
