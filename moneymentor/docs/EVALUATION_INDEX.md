@@ -24,7 +24,7 @@ This index provides quick navigation to all evaluation documentation.
 ### 🌟 Start Here
 
 **1. [Evaluation_Final_Summary.md](Evaluation_Final_Summary.md)** ⭐ **RECOMMENDED STARTING POINT**
-- **484 lines** | Comprehensive final report
+- **521 lines** | Comprehensive final report
 - Consolidates all evaluation findings (binary + semantic scoring)
 - Cost-benefit analysis with ROI calculation
 - Qualitative vs quantitative analysis
@@ -32,11 +32,20 @@ This index provides quick navigation to all evaluation documentation.
 - Lessons learned and future work roadmap
 - **Read this first for complete picture**
 
+**2. [Evaluation_RAGAS_Semantic.md](Evaluation_RAGAS_Semantic.md)** 🆕 **RUBRIC-ALIGNED REPORT**
+- **650+ lines** | Detailed semantic evaluation report
+- TF-IDF semantic scoring methodology and results
+- Simple vs Reasoning dataset analysis with visual charts
+- Binary vs Semantic scoring comparison
+- LangSmith trace analysis
+- Complete rubric alignment documentation
+- **Read this for detailed evaluation evidence**
+
 ---
 
 ### 📊 Main Evaluation Reports
 
-**2. [Evaluation_RAGAS_Updated.md](Evaluation_RAGAS_Updated.md)**
+**3. [Evaluation_RAGAS_Updated.md](Evaluation_RAGAS_Updated.md)**
 - **1,155 lines** | Comprehensive RAGAS evaluation report
 - Binary scoring results for Base, MultiQuery, Compression
 - Why MultiQuery failed (15× cost, 0% improvement)
@@ -45,7 +54,7 @@ This index provides quick navigation to all evaluation documentation.
 - Cost breakdowns and performance tables
 - LangSmith tracking guide
 
-**3. [Evaluation_Reasoning_Dataset.md](Evaluation_Reasoning_Dataset.md)**
+**4. [Evaluation_Reasoning_Dataset.md](Evaluation_Reasoning_Dataset.md)**
 - **373 lines** | Complex reasoning queries evaluation
 - 12 multi-hop, comparative queries
 - Binary scoring limitations analysis
@@ -58,7 +67,7 @@ This index provides quick navigation to all evaluation documentation.
 
 ### 🔧 Setup & Implementation
 
-**4. [HYBRID_RERANK_SETUP.md](HYBRID_RERANK_SETUP.md)**
+**5. [HYBRID_RERANK_SETUP.md](HYBRID_RERANK_SETUP.md)**
 - **398 lines** | Complete implementation guide
 - BM25 + Vector + Cohere Reranking architecture
 - Step-by-step setup instructions
@@ -67,37 +76,43 @@ This index provides quick navigation to all evaluation documentation.
 - A/B testing recommendations
 - Production deployment checklist
 
-**5. [LANGSMITH_SCREENSHOT_GUIDE.md](LANGSMITH_SCREENSHOT_GUIDE.md)**
-- LangSmith run tagging instructions
-- Screenshot capture for documentation
+**6. [LANGSMITH_SCREENSHOT_GUIDE.md](LANGSMITH_SCREENSHOT_GUIDE.md)** 🆕
+- **282 lines** | LangSmith screenshot capture guide
+- Step-by-step dashboard navigation
+- Run filtering and selection
+- Screenshot best practices
+- Evidence collection for documentation
+
+**7. [LANGSMITH_SCREENSHOT_CAPTURE_GUIDE.md](LANGSMITH_SCREENSHOT_CAPTURE_GUIDE.md)** 🆕
+- Alternative/detailed capture guide
+- Troubleshooting tips
 - Programmatic tagging examples
-- Evidence collection guide
 
 ---
 
 ### 📖 Historical Reports (Deprecated Approaches)
 
-**6. [Evaluation_MultiQuery.md](Evaluation_MultiQuery.md)**
+**8. [Evaluation_MultiQuery.md](Evaluation_MultiQuery.md)**
 - **338 lines** | MultiQueryRetriever evaluation
 - Query expansion approach
 - Why it failed (15× cost, 0× improvement)
 - Document overlap analysis
 - Lessons learned
 
-**7. [Evaluation_Advanced_Compression.md](Evaluation_Advanced_Compression.md)**
+**9. [Evaluation_Advanced_Compression.md](Evaluation_Advanced_Compression.md)**
 - **~500 lines** | ContextualCompression evaluation
 - MultiQuery + Compression combined
 - Why it failed worse (60× cost, 2 failures)
 - Over-filtering analysis
 - What went wrong
 
-**8. [Evaluation.md](Evaluation.md)** *(Legacy)*
+**10. [Evaluation.md](Evaluation.md)** *(Legacy)*
 - **182 lines** | Original evaluation report
 - Initial RAGAS framework setup
 - Early binary scoring results
 - **Superseded by Evaluation_Final_Summary.md**
 
-**9. [Base_vs_Advanced_Comparison.md](Base_vs_Advanced_Comparison.md)** *(Legacy)*
+**11. [Base_vs_Advanced_Comparison.md](Base_vs_Advanced_Comparison.md)** *(Legacy)*
 - **292 lines** | Early comparison report
 - Base vs MultiQuery comparison
 - **Superseded by Evaluation_RAGAS_Updated.md**
@@ -106,7 +121,7 @@ This index provides quick navigation to all evaluation documentation.
 
 ### 📈 Evaluation Results & Reports
 
-**10. Semantic Evaluation Reports** (in `reports/` directory)
+**12. Semantic Evaluation Reports** (in `reports/` directory)
 - `semantic_evaluation_simple_*.md` - Simple queries with TF-IDF scoring
 - `semantic_evaluation_reasoning_*.md` - Reasoning queries with TF-IDF scoring
 - `semantic_comparison_*.csv` - Comparison tables
