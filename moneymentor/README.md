@@ -1,6 +1,61 @@
-# MoneyMentor
+# 💸 MoneyMentor: Your Personal Financial Literacy RAG App
 
-**MoneyMentor** is an AI-powered financial advisory assistant that leverages Retrieval-Augmented Generation (RAG) to provide personalized financial guidance based on curated financial documents and best practices.
+> 🧠 **Empower anyone—from beginners to lifelong learners—to build financial independence through conversational, intelligent learning.**  
+> Built as an **Agentic RAG system** combining static domain knowledge with live financial insights.
+
+---
+
+### 🚀 Quick Links
+
+| Purpose | Link |
+|----------|------|
+| 🎥 **Demo Video (≤5 min)** | [Watch on Loom](https://loom.com/share/your-demo-id) |
+| 📘 **Final Submission Report** | [docs/Final_Submission.md](./docs/Final_Submission.md) |
+| 🧩 **Rubric-to-Repo Crosswalk** | [docs/Rubric_to_Repo_Crosswalk.md](./docs/Rubric_to_Repo_Crosswalk.md) |
+| 📊 **LangSmith Dashboard (Evaluation)** | [View Project Dashboard](https://smith.langchain.com/public/your-langsmith-project-link) |
+| 📂 **Golden Dataset (27 Finance Questions)** | [evaluation/golden_set.jsonl](./evaluation/golden_set.jsonl) |
+| 📊 **RAGAS Evaluation Results** | [docs/Evaluation_RAGAS_Semantic.md](./docs/Evaluation_RAGAS_Semantic.md) |
+| 🧮 **Retriever Experiments** | [docs/Evaluation_RAGAS_Updated.md](./docs/Evaluation_RAGAS_Updated.md) |
+
+---
+
+### 💡 Overview
+
+**MoneyMentor** is a financial education app built using a **monolithic RAG architecture** (no separate frontend/backend deployments).  
+It helps users learn financial concepts, practice scenario-based exercises, and test their understanding interactively.
+
+- 🧩 **RAG Core:** Combines curated PDFs (e.g., *Financial Literacy 101*) with context-aware question answering  
+- 🕵️ **Agent Integration:** Uses **Tavily Search Agent** for up-to-date financial insights  
+- ⚙️ **Tech Stack:**  
+  - LLM / Orchestration: `GPT-4o-mini` + `LangChain`  
+  - Embeddings: `text-embedding-3-large`  
+  - Vector DB: `Qdrant`  
+  - Evaluation: `LangSmith` + `RAGAS`  
+  - Frontend: React + Tailwind  
+  - Backend: FastAPI (single deployable app)  
+
+---
+
+### 🧭 Rubric Alignment
+
+This repo satisfies every phase of the evaluation rubric — from defining the problem to assessing RAG performance under advanced retrieval.  
+For traceability, see: [Rubric-to-Repo Crosswalk →](./docs/Rubric_to_Repo_Crosswalk.md)
+
+---
+
+### 🧠 Next Steps (Future Work)
+
+- Fine-tune the **Golden Dataset** to reflect reasoning-heavy queries  
+- Add **multi-agent orchestration** (e.g., budget advisor + investment planner)  
+- Experiment with **hybrid retrieval + contextual compression**  
+- Expand RAGAS scoring to **continuous metrics** beyond binary thresholds  
+
+---
+
+> _Built by KKA using Cursor + LangChain + OpenAI stack, 2025_ ✨  
+> Feedback and contributions welcome!
+
+---
 
 ## Features
 
