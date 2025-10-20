@@ -106,6 +106,42 @@ We conducted comprehensive evaluations comparing Base (vector similarity) and Hy
 - Improvement visible on complex queries only
 - Precision/Recall unchanged (document-level limitation)
 
+### 2.3 Visual Comparison
+
+**Simple Dataset Results:**
+
+![Simple Dataset Results](images/semantic_eval_simple.png)
+
+*Figure 1: No measurable improvement on simple queries. Both retrievers perform similarly for single-concept lookups.*
+
+**Reasoning Dataset Results:**
+
+![Reasoning Dataset Results](images/semantic_eval_reasoning.png)
+
+*Figure 2: Small but positive improvement (+1.1%) on complex queries requiring multi-source reasoning.*
+
+**Improvement Analysis:**
+
+![Improvement Analysis](images/semantic_eval_improvement.png)
+
+*Figure 3: Hybrid+Rerank shows negative improvement on simple queries but positive improvement on reasoning queries. Percentage improvement over Base retriever.*
+
+### 2.4 LangSmith Trace Comparison
+
+**Visual Comparison of Execution Traces:**
+
+![LangSmith Trace Comparison](images/langsmith_trace_comparison.png)
+
+*Figure 4: Side-by-side comparison of Base vs Hybrid+Rerank execution traces showing latency, cost, metrics, and retrieval details.*
+
+**Key Observations:**
+- **Latency:** Hybrid+Rerank takes 2.25× longer (1.8s vs 0.8s) due to multi-stage retrieval
+- **Cost:** 12.5× higher ($0.00025 vs $0.00002) due to BM25 indexing + Vector search + Cohere reranking
+- **Metrics:** Small but measurable improvements in Faithfulness (+1.1%) and Relevancy (+1.1%)
+- **Retrieval:** Hybrid+Rerank processes 24 chunks and reranks to top 5, vs Base's direct top 5
+
+> **Note:** For actual LangSmith dashboard screenshots showing detailed traces with retrieved chunks and intermediate steps, see `docs/LANGSMITH_SCREENSHOT_CAPTURE_GUIDE.md` for instructions on capturing screenshots from your LangSmith workspace.
+
 ---
 
 ## 3. Cost-Benefit Analysis
