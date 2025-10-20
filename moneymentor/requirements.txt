@@ -11,6 +11,8 @@ langchain-openai>=0.0.2
 
 # Search and retrieval
 tavily-python>=0.3.0
+rank-bm25>=0.2.2  # BM25 keyword search
+cohere>=4.37  # Cohere Reranking API
 
 # OpenAI
 openai>=1.0.0
