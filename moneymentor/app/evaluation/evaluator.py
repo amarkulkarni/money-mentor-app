@@ -390,7 +390,29 @@ def evaluate_with_ragas(test_set_path: str, mode: str = "base") -> Dict[str, Any
 
 
 if __name__ == "__main__":
-    """CLI entrypoint for running evaluation."""
+    """
+    CLI entrypoint for running evaluation.
+    
+    Usage:
+        python -m app.evaluation.evaluator [mode] [dataset]
+        
+    Arguments:
+        mode: "base" or "advanced" (default: "base")
+        dataset: Path to test set jsonl file (default: "evaluation/golden_set.jsonl")
+        
+    Examples:
+        # Simple queries with base retriever
+        python -m app.evaluation.evaluator base
+        
+        # Simple queries with advanced retriever
+        python -m app.evaluation.evaluator advanced
+        
+        # Reasoning queries with base retriever
+        python -m app.evaluation.evaluator base evaluation/golden_set_reasoning.jsonl
+        
+        # Reasoning queries with advanced retriever
+        python -m app.evaluation.evaluator advanced evaluation/golden_set_reasoning.jsonl
+    """
     import sys
     
     # Default values
@@ -408,12 +430,13 @@ if __name__ == "__main__":
         print(f"❌ Error: Invalid mode '{mode}'. Must be 'base' or 'advanced'")
         print()
         print("Usage:")
-        print("  python -m app.evaluation.evaluator [mode] [test_set_path]")
+        print("  python -m app.evaluation.evaluator [mode] [dataset]")
         print()
         print("Examples:")
         print("  python -m app.evaluation.evaluator base")
         print("  python -m app.evaluation.evaluator advanced")
         print("  python -m app.evaluation.evaluator base evaluation/golden_set.jsonl")
+        print("  python -m app.evaluation.evaluator advanced evaluation/golden_set_reasoning.jsonl")
         sys.exit(1)
     
     # Check if file exists
@@ -421,11 +444,21 @@ if __name__ == "__main__":
         print(f"❌ Error: Test set file not found: {test_set_path}")
         print()
         print("Usage:")
-        print("  python -m app.evaluation.evaluator [mode] [test_set_path]")
+        print("  python -m app.evaluation.evaluator [mode] [dataset]")
+        print()
+        print("Available datasets:")
+        print("  - evaluation/golden_set.jsonl (15 simple queries)")
+        print("  - evaluation/golden_set_reasoning.jsonl (12 complex queries)")
         print()
         print("Example:")
-        print("  python -m app.evaluation.evaluator base evaluation/golden_set.jsonl")
+        print("  python -m app.evaluation.evaluator advanced evaluation/golden_set_reasoning.jsonl")
         sys.exit(1)
+    
+    # Detect dataset type for better logging
+    dataset_name = "simple" if "golden_set.jsonl" in test_set_path else "reasoning"
+    print(f"📊 Dataset: {dataset_name} ({test_set_path})")
+    print(f"🔧 Mode: {mode}")
+    print()
     
     # Run evaluation
     try:
