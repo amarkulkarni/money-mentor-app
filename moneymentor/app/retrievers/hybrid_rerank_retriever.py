@@ -83,7 +83,7 @@ def load_documents_for_bm25(processed_dir: str = "./data/processed") -> List[Doc
 
 def build_hybrid_rerank_retriever(
     collection_name: str = COLLECTION_NAME,
-    processed_dir: str = "./data/processed",
+    processed_dir: str = "app/data/processed",
     k: int = FINAL_K
 ) -> "HybridReranker":
     """
