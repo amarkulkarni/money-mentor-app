@@ -1,0 +1,3 @@
+Retriever,Faithfulness,Relevancy,Precision,Recall,Queries,Dataset,Δ Faithfulness,Δ Relevancy,Δ Precision,Δ Recall
+Base,0.14508333333333334,0.22966666666666669,0.02291666666666667,0.04766666666666667,12,reasoning,,,,
+Hybrid+Rerank,0.15616666666666665,0.24075000000000002,0.02291666666666667,0.04766666666666667,12,reasoning,+1.1%,+1.1%,+0.0%,+0.0%
