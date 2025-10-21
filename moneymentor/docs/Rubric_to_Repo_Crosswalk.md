@@ -501,7 +501,7 @@ python scripts/generate_charts.py
 
 ## 🎬 Demo & Presentation
 
-**Demo Video:** [Watch on Loom]([https://loom.com/share/your-demo-id](https://www.loom.com/share/47ffb2fa1f224cdfab9f1d2821bfbd71?sid=33542599-b73a-4183-8351-645aab019ff0)) (≤5 minutes)
+**Demo Video:** [Watch on Loom]([https://loom.com/share/your-demo-id](https://www.loom.com/share/47ffb2fa1f224cdfab9f1d2821bfbd71?sid=33542599-b73a-4183-8351-645aab019ff0]) (≤5 minutes)
 
 **LangSmith Dashboard:** [View Project]([https://smith.langchain.com/public/your-project-link](https://smith.langchain.com/o/74d2e77a-33b9-43a7-986e-55a4a4516380/projects/p/10015b68-7d60-4e6a-8be4-62bc14665913?timeModel=%7B%22duration%22%3A%227d%22%7D&searchModel=%7B%22filter%22%3A%22like%28tag%2C+%5C%22%25mode%3Aadvanced%25%5C%22%29%22%2C%22searchFilter%22%3A%22eq%28is_root%2C+true%29%22%7D&peek=3ab3cc5e-fd33-4f57-845b-5f657ddcc1db&peeked_trace=3ab3cc5e-fd33-4f57-845b-5f657ddcc1db&runtab=0))
 
