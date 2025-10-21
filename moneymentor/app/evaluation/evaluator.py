@@ -160,10 +160,11 @@ def log_to_langsmith(
     expected_answer: str,
     actual_answer: str,
     contexts: List[str],
-    metrics: Dict[str, float]
+    metrics: Dict[str, float],
+    mode: str = "base"
 ) -> None:
     """
-    Log evaluation results to LangSmith.
+    Log evaluation results to LangSmith with RAGAS metrics.
     
     Note: Requires LANGCHAIN_API_KEY environment variable.
     If not set, this function will silently skip logging.
@@ -175,6 +176,7 @@ def log_to_langsmith(
         actual_answer: Generated answer
         contexts: Retrieved contexts
         metrics: RAGAS metrics dict
+        mode: Retrieval mode (base or advanced)
     """
     try:
         # Check if LangSmith is configured
@@ -183,31 +185,38 @@ def log_to_langsmith(
         
         # Try to use LangSmith client
         try:
-            from langsmith import Client
+            from langsmith import Client, traceable
+            from langsmith.run_helpers import trace
             
             client = Client()
             
-            # Create a run with all evaluation data
-            client.create_run(
+            # Use traceable decorator approach for better integration
+            @traceable(
                 name=run_name,
                 run_type="chain",
-                inputs={"query": query, "expected_answer": expected_answer},
-                outputs={"answer": actual_answer},
-                extra={
-                    "contexts": contexts,
-                    "metrics": metrics,
-                    "metadata": {
-                        "evaluation_type": "RAGAS",
-                        "retrieval_mode": mode,
-                        "num_contexts": len(contexts),
-                        "faithfulness": metrics.get("faithfulness", 0.0),
-                        "answer_relevancy": metrics.get("answer_relevancy", 0.0),
-                        "context_precision": metrics.get("context_precision", 0.0),
-                        "context_recall": metrics.get("context_recall", 0.0)
-                    }
+                project_name=os.getenv("LANGCHAIN_PROJECT", "MoneyMentor"),
+                tags=["evaluation", "ragas", f"mode:{mode}"],
+                metadata={
+                    "evaluation_type": "RAGAS",
+                    "retrieval_mode": mode,
+                    "num_contexts": len(contexts),
+                    "faithfulness": metrics.get("faithfulness", 0.0),
+                    "answer_relevancy": metrics.get("answer_relevancy", 0.0),
+                    "context_precision": metrics.get("context_precision", 0.0),
+                    "context_recall": metrics.get("context_recall", 0.0)
                 }
             )
-            print(f"  📊 Logged to LangSmith: {run_name}")
+            def evaluation_run():
+                return {
+                    "query": query,
+                    "expected_answer": expected_answer,
+                    "actual_answer": actual_answer,
+                    "contexts": contexts,
+                    "metrics": metrics
+                }
+            
+            # Execute the traced function
+            evaluation_run()
             
         except ImportError:
             print(f"  ⚠️  LangSmith package not installed (pip install langsmith)")
@@ -284,7 +293,8 @@ def evaluate_with_ragas(test_set_path: str, mode: str = "base") -> Dict[str, Any
                 expected_answer=expected_answer,
                 actual_answer=actual_answer,
                 contexts=contexts,
-                metrics=metrics
+                metrics=metrics,
+                mode=mode
             )
             
             # Store result

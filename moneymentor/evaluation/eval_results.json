@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-10-19T21:57:37.693758",
-  "test_set": "evaluation/golden_set_reasoning.jsonl",
+  "timestamp": "2025-10-20T23:27:21.114027",
+  "test_set": "/tmp/mini_test_set.jsonl",
   "mode": "advanced",
-  "total_queries": 12,
-  "successful": 12,
+  "total_queries": 3,
+  "successful": 3,
   "failed": 0,
   "summary": {
     "avg_faithfulness": 0.0,
@@ -13,334 +13,28 @@
   },
   "results": [
     {
-      "query": "Compare the benefits and risks of saving in a high-yield savings account versus investing in index funds for 5 years.",
-      "expected_answer": "High-yield savings accounts are safer but yield lower returns; index funds carry market risk but offer higher potential growth over five years.",
-      "actual_answer": "Great question! Let\u2019s break down the benefits and risks of both high-yield savings accounts and investing in index funds over a 5-year period.\n\n### High-Yield Savings Account\n\n**Benefits:**\n1. **Safety**: High-yield savings accounts are generally insured by the government (up to certain limits), which means your money is safe from loss.\n2. **Liquidity**: These accounts are highly liquid, meaning you can access your funds quickly and easily without penalties.\n3. **Predictable Returns**: The interest rate is usually fixed, allowing you to know exactly how much you'll earn over time.\n\n**Risks:**\n1. **Lower Returns**: While high-yield savings accounts offer better interest rates than traditional savings accounts (around 1.5% to 2%), the returns are significantly lower than potential stock market gains.\n2. **Inflation Risk**: If inflation rates exceed your interest rate, the purchasing power of your savings could decrease over time.\n\n### Investing in Index Funds\n\n**Benefits:**\n1. **Higher Potential Returns**: Historically, the stock market has averaged around 12% growth per year, which means that index funds can offer much higher returns compared to savings accounts.\n2. **Compounding Growth**: Investing early and consistently allows you to benefit from compound interest, where you earn returns not only on your initial investment but also on the accumulated interest.\n\n**Risks:**\n1. **Market Volatility**: The stock market can be unpredictable in the short term, with values fluctuating due to various factors. This means your investment could decrease in value, especially over a short time frame like 5 years.\n2. **Risk of Loss**: Unlike savings accounts, index funds are not insured, so there\u2019s a risk of losing money, especially if you need to withdraw during a market downturn.\n\n### Summary\n\n- If you prioritize safety and quick access to your funds, a high-yield savings account is a better choice. However, be mindful of the lower returns and the risk of inflation.\n- If you are willing to accept some risk in exchange for the potential for higher returns, investing in index funds may be more suitable, especially if you can stay invested for the long term and ride out market fluctuations.\n\nUltimately, your choice should align with your financial goals, risk tolerance, and time horizon. If you're saving for something specific within the next few years, a high-yield savings account may be more appropriate. If you're looking to grow wealth over a longer period, consider index funds.",
+      "query": "What is compound interest?",
+      "expected_answer": "Compound interest is interest calculated on both the initial principal and accumulated interest",
+      "actual_answer": "Compound interest is a powerful financial concept that refers to the way interest is calculated on both the initial principal amount and any interest that has already been added to it. This means that as you earn interest, that interest also begins to earn interest, leading to exponential growth over time.\n\nHere\u2019s a simple breakdown:\n\n1. **Initial Principal**: This is the original amount of money you invest or save. For example, let's say you start with $1,000.\n\n2. **Interest Rate**: This is the percentage at which your money grows each year. For instance, if you have an interest rate of 5%, you would earn $50 in interest during the first year (5% of $1,000).\n\n3. **Compounding**: If you leave your money in the account, that interest is added to your principal. So after one year, you would have $1,050 ($1,000 + $50). In the second year, you earn interest on the new total ($1,050), which would be $52.50 (5% of $1,050). Your new balance would then be $1,102.50.\n\n4. **Growth Over Time**: As you continue to leave your money invested and allow it to compound, the amount of interest you earn each year increases. This is because you're earning interest on a larger amount as time goes on.\n\nTo illustrate, if you start saving at a young age and consistently invest, even small amounts can grow significantly over time due to the effect of compound interest. For example, investing $300 per month at a 7% annual return could grow to over $540,000 by the time you retire, simply because of the compounding effect.\n\nIn summary, compound interest is essentially earning \"interest on your interest,\" which can lead to substantial growth in your savings or investments over time!",
       "contexts": [
-        "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
-        "overall stock market has averaged 12% growth per year over the long haul. \n \nThere are many ways to invest money, and all of them involve the risk-return tradeoff. You \nwill get paid a higher rate of ...",
-        "\uf0d8 TIME HORIZON (how long you can leave the money invested before you will need it) \n\uf0d8 DIVERSIFICATION (spreading out the risk among different types of investments) \n \nU.S. savings bonds offer a good c...",
-        "ments would have greater \u201cgrowth potential\u201d than \n\u201c\ufb01xed income\u201d investments like a Canada Savings \nBond. Of course, it also has a greater risk of a loss \nin value. There\u2019s the old \u201crisk/return balance...",
-        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "overall stock market has averaged 12% growth per year over the long haul. \n \nThere are many ways to invest money, and all of them involve the risk-return tradeoff. You \nwill get paid a higher rate of ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "\uf0d8 TIME HORIZON (how long you can leave the money invested before you will need it) \n\uf0d8 DIVERSIFICATION (spreading out the risk among different types of investments) \n \nU.S. savings bonds offer a good c..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "ments would have greater \u201cgrowth potential\u201d than \n\u201c\ufb01xed income\u201d investments like a Canada Savings \nBond. Of course, it also has a greater risk of a loss \nin value. There\u2019s the old \u201crisk/return balance..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "If inflation rises while interest rates remain low, how does that affect both savers and borrowers?",
-      "expected_answer": "Savers lose purchasing power because returns lag inflation; borrowers benefit because they repay loans with money that is worth less.",
-      "actual_answer": "When inflation rises while interest rates remain low, it creates a challenging environment for both savers and borrowers, but the impacts differ for each group.\n\n### For Savers:\n1. **Erosion of Purchasing Power**: If inflation is higher than the interest rate you earn on your savings, the real value (or purchasing power) of your money decreases. For example, if you earn 1% interest on your savings while inflation is at 3%, effectively, your money is losing value. You can buy less with the same amount over time.\n  \n2. **Motivation to Invest**: With low interest rates failing to keep up with inflation, savers may feel encouraged to invest their money in assets that have the potential for higher returns, such as stocks or real estate, rather than keeping it in a savings account.\n\n### For Borrowers:\n1. **Cheaper Borrowing Costs**: Low interest rates mean that borrowing costs are lower. This can make it easier for individuals to take on loans for things like homes or education. However, if inflation rises, the real cost of repaying those loans can be lower, as the value of money decreases over time.\n\n2. **Potential Financial Stress**: If borrowers are stretched thin with debt and inflation leads to higher costs of living (like rising prices for groceries or utilities), they may find it more difficult to manage their expenses. This can lead to financial stress and difficulty in meeting debt obligations.\n\n### Summary:\nIn summary, rising inflation coupled with low interest rates generally hurts savers by diminishing the value of their savings, while it can benefit borrowers by reducing the real cost of their debts. However, it can also create a challenging situation for those already in debt if their living costs increase significantly. If you're a saver, consider exploring investment options to protect your money against inflation, and if you're a borrower, ensure that you're managing your debt wisely to avoid financial strain.",
-      "contexts": [
-        "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu...",
-        "spend most of their income, save so little, and bor-\nrow a lot. Too many may be stretched and struggle \nwith debt they have. When interest rates rise that is \nwhen things could get really dif\ufb01cult. \nS...",
-        "ago because the cost of housing is now so high. \nAnother reason people are borrowing more today \nis because, overall, people are spending more of \ntheir income \u2013 and saving less. Back in the early \n19...",
-        "spending so much of their income and \nsaving so little? \nThink About It\nbeen so low. Like it is for other things, if the cost to \nborrow money goes down, people will probably bor-\nrow more of it. And ...",
-        "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "spend most of their income, save so little, and bor-\nrow a lot. Too many may be stretched and struggle \nwith debt they have. When interest rates rise that is \nwhen things could get really dif\ufb01cult. \nS..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "ago because the cost of housing is now so high. \nAnother reason people are borrowing more today \nis because, overall, people are spending more of \ntheir income \u2013 and saving less. Back in the early \n19..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "spending so much of their income and \nsaving so little? \nThink About It\nbeen so low. Like it is for other things, if the cost to \nborrow money goes down, people will probably bor-\nrow more of it. And ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "card if you need it.\n\u2022 Most of us \u201cstore\u201d our money in \ufb01nancial institutions \nby putting it in different kinds of accounts \u2013 savings \naccount, chequing account, savings-chequing \naccount, tax-free sav..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "Explain how diversification reduces portfolio risk using an example with stocks and bonds.",
-      "expected_answer": "When stocks fall, bonds often hold value or rise; holding both means losses in one asset are offset by gains in another, reducing total risk.",
-      "actual_answer": "Diversification is a key investment strategy that helps reduce portfolio risk by spreading your investments across different asset classes, such as stocks and bonds, instead of putting all your money into one type of investment. Let\u2019s break this down with an example.\n\nImagine you have $10,000 to invest. If you decide to invest all of it in a single stock, you're putting all your eggs in one basket. If that company faces financial difficulties or the stock market takes a downturn, your entire investment could lose a significant amount of value, or even become worthless if the company goes out of business. This is known as market risk.\n\nNow, let's consider a diversified approach. You could allocate your $10,000 like this:\n\n- **$5,000 in stocks**: You invest in a mix of different companies across various sectors (like technology, healthcare, and consumer goods). Some of these stocks may perform well while others may not, but the overall risk is lower because you're not dependent on the success of just one company.\n\n- **$5,000 in bonds**: You invest in a mix of government and corporate bonds. Bonds are generally more stable than stocks, and they provide regular interest payments. If the stock market declines, the bonds may still hold their value or even appreciate, providing a cushion against stock losses.\n\nIn this diversified portfolio, if the stock market drops and your stock investments lose value, your bonds may help offset those losses by remaining stable or providing income. Conversely, if the stock market rises, your stocks may perform well, allowing you to benefit from the gains while still having the stability of bonds.\n\nBy diversifying your investments between stocks and bonds, you reduce the overall risk of your portfolio. If one asset class underperforms, the other may help balance it out, leading to a more stable investment experience over time. This is why the principle of \"diversify, diversify, diversify\" is so crucial in investing!",
-      "contexts": [
-        "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds...",
-        "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves...",
-        "You will want to have a good mix of different kinds of \ninvestments. Why? Because that provides you with \nsome protection. If some of your investments fall \nin value, others may rise. If some are quit...",
-        "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything...",
-        "government insured, pay about 3-5% APY \nCorporate Bonds \nnot insured, pay about 3-6% APY \nStocks \nnot insured, can grow lots or lose lots \nMutual Funds \nnot insured, can average 12% growth if buy and ..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Page 28 \nSTRATEGIES TO KEEP RISKS LOW AND RETURNS HIGH \nDiversification \nIf you put all your eggs into one basket, they could all get broken. One way to diversify is to buy \nsome of each type of inves..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "You will want to have a good mix of different kinds of \ninvestments. Why? Because that provides you with \nsome protection. If some of your investments fall \nin value, others may rise. If some are quit..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "\ufb01nancial plan.\nAre there any risks in life that you \nhave faced \u2013 or face today? Not just \nmoney \u2013 but any kind of risk? If so, \nhave you done anything to reduce the \namount of risk? Is there anything..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "government insured, pay about 3-5% APY \nCorporate Bonds \nnot insured, pay about 3-6% APY \nStocks \nnot insured, can grow lots or lose lots \nMutual Funds \nnot insured, can average 12% growth if buy and ..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "A 25-year-old and a 55-year-old both invest $10,000\u2014how should their asset allocation differ and why?",
-      "expected_answer": "The younger investor can take more risk with stocks for growth; the older investor should favor bonds and cash for capital preservation.",
-      "actual_answer": "Great question! The asset allocation for a 25-year-old and a 55-year-old should differ primarily due to their time horizons and risk tolerance.\n\n**1. Time Horizon:**\n   - The 25-year-old has a longer time horizon until retirement (about 40 years), which allows them to take on more risk. They can benefit from the power of compounding over a longer period, which means they can afford to invest in higher-risk, higher-reward assets, such as stocks.\n   - The 55-year-old, on the other hand, is closer to retirement (about 10 years away). As they have less time to recover from market downturns, they might prefer a more conservative approach to preserve their capital.\n\n**2. Risk Tolerance:**\n   - The younger investor can typically tolerate more volatility in their investments. They might consider an asset allocation of around 80% - 90% in equities (stocks) and 10% - 20% in fixed income (bonds) or cash equivalents.\n   - The older investor may prefer to mitigate risk and focus on capital preservation. A more conservative allocation might be 60% - 70% in fixed income (bonds) and 30% - 40% in equities.\n\n**Example Allocations:**\n- **25-Year-Old:**\n  - 85% Stocks: $8,500\n  - 15% Bonds: $1,500\n\n- **55-Year-Old:**\n  - 40% Stocks: $4,000\n  - 60% Bonds: $6,000\n\n**Why This Matters:**\nA longer time horizon allows the younger investor to take advantage of market growth, while the older investor needs to protect their savings from potential losses as they approach retirement. \n\nIt's essential for both to review their investments regularly and adjust their asset allocations as they age or as their financial situations change. Remember, investing should be a steady and thoughtful process, not one driven by panic or trends.",
-      "contexts": [
-        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow...",
-        "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq...",
-        "Hopefully, these will build up over time so that, in the \nfuture, they can help to provide an income for you.\nAs an example, suppose that from age 25 you \nsaved and invested $1,000 a year and that you...",
-        "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
-        "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Hopefully, these will build up over time so that, in the \nfuture, they can help to provide an income for you.\nAs an example, suppose that from age 25 you \nsaved and invested $1,000 a year and that you..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "balance point. \nIn summary, investing is something that should be \nconsidered by everyone, not only those with lots of \nmoney or great wealth. Investing is not only good for \nthe individual investor; ..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "How do compound interest and inflation interact to impact long-term savings?",
-      "expected_answer": "Compound interest grows savings exponentially, but inflation erodes real value; the net benefit depends on the interest rate exceeding inflation.",
-      "actual_answer": "Great question! Understanding how compound interest and inflation interact is crucial for effective long-term savings.\n\n**Compound Interest**: This is the process where you earn interest not just on your initial investment, but also on the interest that accumulates over time. For example, if you invest $1,000 at a 5% interest rate, after the first year, you\u2019ll earn $50 in interest, making your total $1,050. In the second year, you earn interest on $1,050, which results in more earnings\u2014this is the \"magic\" of compounding.\n\n**Inflation**: This refers to the rise in prices over time, which can erode the purchasing power of your money. For instance, if inflation is at 3% and your savings only earn 2% interest, you're effectively losing money in terms of what that money can buy in the future.\n\nNow, let\u2019s see how they interact:\n\n1. **Earning Potential**: If your investments earn a rate that is higher than inflation, your purchasing power increases. For instance, if you earn 5% interest while inflation is at 3%, your effective growth is 2% (5% - 3%), meaning your savings are growing in real terms.\n\n2. **Erosion of Value**: If your savings are not earning enough to outpace inflation, you risk having less purchasing power over time. For example, if you save money that earns only 1% interest while inflation is at 3%, you are losing ground, as the real value of your savings decreases.\n\n3. **Long-Term Planning**: To maximize your long-term savings, aim for investment options that historically yield returns higher than the inflation rate. For instance, stock market investments often provide returns that outpace inflation over the long term, thanks to compound interest.\n\nIn summary, while compound interest can help your savings grow significantly over time, inflation can diminish those gains if your returns don't keep pace. It's essential to choose investment options wisely to ensure your savings not only grow but also maintain their purchasing power in the future.",
-      "contexts": [
-        "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu...",
         "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
+        "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ...",
         "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
-        "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
-        "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ..."
+        "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n...",
+        "the rate of interest. \nThe total cost will also be affected by how long it takes you to \npay back a loan. The longer it takes you to pay back money you \nborrow, the more you will pay in interest. As a..."
       ],
       "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "savings in a year, but in\ufb02ation is 3%, your savings \nwill have trouble increasing their \u201cpurchasing \npower.\u201d In\ufb02ation can eat away at the value of our \nmoney and make saving for the future more dif\ufb01cu..."
-        },
         {
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
           "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
         },
         {
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
           "text": "good and bad.\n\u2022 Choose things you could do when opportunities \ncome up \u2013 travel, help others, buy something you \nwant or need without using debt, etc.\n\u2022 Feel better knowing you have money available \u2013 ..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "Describe how emergency funds and insurance work together in financial planning.",
-      "expected_answer": "An emergency fund covers short-term unexpected costs; insurance protects against larger, less frequent risks\u2014together they enhance financial stability.",
-      "actual_answer": "Emergency funds and insurance are both essential components of a solid financial plan, and they work together to provide a safety net for unexpected events.\n\n**Emergency Funds:**\nAn emergency fund is a savings account set aside specifically for unexpected expenses, such as medical emergencies, car repairs, or job loss. This fund acts as a buffer, giving you quick access to cash when you need it most without having to rely on credit or loans. Financial experts often recommend having three to six months' worth of living expenses saved in your emergency fund.\n\n**Insurance:**\nInsurance, on the other hand, is designed to protect you from significant financial losses that could arise from certain risks. For example, health insurance can cover medical costs, while auto insurance can help with expenses related to car accidents. When you pay premiums to an insurance company, they pool that money and use it to pay out claims when policyholders experience covered events.\n\n**How They Work Together:**\n1. **Layered Protection:** Emergency funds can cover smaller, immediate expenses, while insurance protects against larger, more catastrophic financial risks. For instance, if you have an unexpected medical expense, your emergency fund can help cover the deductible or co-pay, while your health insurance takes care of the bulk of the costs.\n\n2. **Peace of Mind:** Knowing you have both an emergency fund and insurance provides peace of mind. You can face unexpected challenges with confidence, knowing that you're financially prepared for various situations.\n\n3. **Avoiding Debt:** Having an emergency fund means you can avoid going into debt for unplanned expenses. If an emergency arises, you can tap into your savings first, and let your insurance handle larger claims, reducing your financial stress.\n\n4. **Strategic Use of Resources:** Using your emergency fund for smaller emergencies means you can keep your insurance for scenarios that are harder to predict or more costly, ensuring that you're not exhausting your coverage prematurely.\n\nIn summary, an emergency fund covers immediate, unexpected costs while insurance protects against larger risks. Together, they create a robust financial safety net, allowing you to navigate life's uncertainties with greater security and confidence.",
-      "contexts": [
-        "It can be very sad (sometimes tragic) if all of a \nsudden things for which we have worked so hard \nare destroyed or taken away. Part of good \ufb01nancial \nplanning is to plan for things that may go wrong ...",
-        "and stop work if you want to do other things \u2013 try and start planning for that as soon as you can. \nMany people leave it too late and struggle to ever get to that point. Pick an age when you would \nli...",
-        "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi...",
-        "they won\u2019t pay. \nSo remember, insure things that are important to \nyou \u2013 and insure them with the right kind of insur-\nance. But don\u2019t take on more insurance than you \nneed. Most people will work with...",
-        "taking your assets. \nAn Important Tip \nBe sure the insurance company pays your bills. If they do not, you are stuck. When you get a bill \nfrom the clinic or hospital, call their billing department to ..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "It can be very sad (sometimes tragic) if all of a \nsudden things for which we have worked so hard \nare destroyed or taken away. Part of good \ufb01nancial \nplanning is to plan for things that may go wrong ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "and stop work if you want to do other things \u2013 try and start planning for that as soon as you can. \nMany people leave it too late and struggle to ever get to that point. Pick an age when you would \nli..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "they won\u2019t pay. \nSo remember, insure things that are important to \nyou \u2013 and insure them with the right kind of insur-\nance. But don\u2019t take on more insurance than you \nneed. Most people will work with..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "taking your assets. \nAn Important Tip \nBe sure the insurance company pays your bills. If they do not, you are stuck. When you get a bill \nfrom the clinic or hospital, call their billing department to ..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "If you invest $500 monthly at 7% and your friend saves $500 monthly at 2%, how much more will each have after 20 years?",
-      "expected_answer": "The investor will have roughly $260k versus the saver's $146k, illustrating the long-term advantage of higher returns through investing.",
-      "actual_answer": "Let's break it down step by step for both you and your friend.\n\n1. **Your Investment ($500 monthly at 7% for 20 years):**\n\nTo calculate the future value of your investment, we can use the future value of a series formula (also known as the future value of an annuity). The formula is as follows:\n\n\\[ FV = P \\times \\frac{(1 + r)^n - 1}{r} \\]\n\nWhere:\n- \\( FV \\) = future value\n- \\( P \\) = monthly contribution ($500)\n- \\( r \\) = monthly interest rate (annual rate divided by 12 months)\n- \\( n \\) = total number of contributions (months)\n\nFor your investment:\n- Monthly contribution \\( P = 500 \\)\n- Annual interest rate = 7%, so monthly rate \\( r = \\frac{0.07}{12} \\approx 0.005833 \\)\n- Total number of contributions over 20 years \\( n = 20 \\times 12 = 240 \\)\n\nNow, plugging in the values:\n\n\\[\nFV = 500 \\times \\frac{(1 + 0.005833)^{240} - 1}{0.005833} \n\\]\n\nCalculating this gives:\n\n\\[\nFV \\approx 500 \\times \\frac{(1.005833)^{240} - 1}{0.005833} \\approx 500 \\times \\frac{4.0007 - 1}{0.005833} \\approx 500 \\times 513.342 = 256,671\n\\]\n\nSo, after 20 years, you would have approximately **$256,671**.\n\n2. **Your Friend\u2019s Savings ($500 monthly at 2% for 20 years):**\n\nUsing the same formula for your friend:\n\nFor your friend's savings:\n- Monthly contribution \\( P = 500 \\)\n- Annual interest rate = 2%, so monthly rate \\( r = \\frac{0.02}{12} \\approx 0.001667 \\)\n- Total number of contributions over 20 years \\( n = 240 \\)\n\nNow, plugging in the values:\n\n\\[\nFV = 500 \\times \\frac{(1 + 0.001667)^{240} - 1}{0.001667}\n\\]\n\nCalculating this gives:\n\n\\[\nFV \\approx 500 \\times \\frac{(1.001667)^{240} - 1}{0.001667} \\approx 500 \\times \\frac{1.4918 - 1}{0.001667} \\approx 500 \\times 294.972 = 147,486\n\\]\n\nSo, after 20 years, your friend would have approximately **$147,486**.\n\n3. **Difference:**\n\nNow, to find out how much more you would have compared to your friend:\n\n\\[\nDifference = 256,671 - 147,486 \\approx 109,185\n\\]\n\nIn summary, after 20 years, you would have approximately **$256,671**, while your friend would have approximately **$147,486**. You would have about **$109,185 more** than your friend. \n\nThis example highlights the powerful impact of compound interest and higher rates of return over time. Keep up the great savings and investing!",
-      "contexts": [
-        "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq...",
-        "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ...",
-        "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ...",
-        "share of the market, so yearly costs are very low. Some investment firms will let you buy mutual \nfunds with as little as $25/month and only $10/year cost to keep the account open. By keeping \ncosts l...",
-        "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Let\u2019s say you set a target of age 40 to focus on \ufb01nancial independence \u2013 and \nyou want to achieve that goal by age 60. That gives you 20 years. By age 40 you \nwill have likely acquired some assets, eq..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "$5,000    a year at 6% for 20 years  = $200,000\n$8,000    a year at 6% for 20 years  = $320,000\n$10,000  a year at 6% for 20 years  = $400,000\nNow, what if you started earlier at age 35, and targeted ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "$1,000, you now have $1,050. Over the next year, \nyour $1,050 will earn 5% \u2013 or another $52.50. If \nyou leave that money in, you now have $1,102.50. \nYour $1,000 has grown \u2013 and is now growing faster ..."
         },
         {
           "source": "unknown",
@@ -352,7 +46,13 @@
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
-          "text": "have $540,316 by the time you retire at age 65. But if you waited until age 45, and then even put \ntwice as much in ($600 per month), at the same 7% rate, you would only have $312,556 by age \n65. Slow..."
+          "text": "Monthly  \nPayment\nTotal Repaid\nTotal Interest \nPayment\n4%\n$316.70\n$95,010\n$35,011\n6%\n$386.58\n$115,974\n$55,974\n8%\n$463.09\n$138,927\n$78,927\n10%\n$545.22\n$163,566\n$103,566\nInterest Rate\nMonthly  \nPayment\n..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "the rate of interest. \nThe total cost will also be affected by how long it takes you to \npay back a loan. The longer it takes you to pay back money you \nborrow, the more you will pay in interest. As a..."
         }
       ],
       "metrics": {
@@ -363,172 +63,72 @@
       }
     },
     {
-      "query": "What are the short-term and long-term effects of rising interest rates on stock and bond markets?",
-      "expected_answer": "Short-term: bond prices fall and stocks may dip; long-term: investors adapt, yields stabilize, and equities may recover as inflation cools.",
-      "actual_answer": "Rising interest rates can have significant effects on both stock and bond markets, and these effects can vary in the short term and long term.\n\n### Short-Term Effects:\n\n**On Bonds:**\n1. **Price Decline:** When interest rates rise, the prices of existing bonds typically fall. This is because new bonds are issued at higher rates, making older bonds with lower rates less attractive. For example, if you own a bond that pays 4% and new bonds are issued at 6%, your bond's value decreases because investors will prefer the new bonds.\n   \n2. **Market Volatility:** As interest rates rise, bond market volatility can increase as investors adjust their portfolios. This can lead to fluctuations in bond prices as the market reacts to new information.\n\n**On Stocks:**\n1. **Increased Borrowing Costs:** Higher interest rates can lead to higher borrowing costs for companies, which can reduce profit margins and negatively impact stock prices in the short term. Companies may cut back on expansion or investment plans due to these higher costs.\n\n2. **Investor Sentiment:** Rising rates can lead to a shift in investor sentiment. Some investors may move money out of stocks and into bonds, seeking the safety of fixed income investments, which can lead to stock price declines.\n\n### Long-Term Effects:\n\n**On Bonds:**\n1. **Yield Adjustment:** Over the long term, as interest rates stabilize at a higher level, new bonds will generally offer higher yields, which can attract investors back to the bond market. This may help restore balance and stabilize prices as the market adjusts.\n\n2. **Shift in Investment Strategy:** Investors may alter their strategies, favoring bonds for their stability and income potential if they perceive that rates will remain high for an extended period.\n\n**On Stocks:**\n1. **Economic Impact:** Persistently high interest rates can slow economic growth, which may lead to lower corporate earnings over time. This can negatively impact stock prices and valuations.\n\n2. **Sector Performance:** Some sectors, like utilities and real estate, often suffer more in a high-interest-rate environment because they rely heavily on borrowing. Other sectors, like financials, may benefit as they can charge higher rates on loans.\n\nIn summary, rising interest rates generally lead to short-term declines in both stock and bond prices due to increased borrowing costs and market adjustments. Long-term effects are more complex and can result in a shift in investment strategies and sector performances, influenced by the overall economic environment. It's essential for investors to stay informed and consider diversifying their portfolios to mitigate risks associated with rising interest rates.",
+      "query": "What is the 50/30/20 budgeting rule?",
+      "expected_answer": "The 50/30/20 rule suggests allocating 50% to needs, 30% to wants, and 20% to savings",
+      "actual_answer": "The 50/30/20 budgeting rule is a simple and effective way to manage your finances by dividing your after-tax income into three categories: \n\n1. **50% Needs**: Allocate 50% of your income to essential expenses, which include things like housing (rent or mortgage), utilities, groceries, transportation, insurance, and any other necessary expenses. These are the things you cannot live without.\n\n2. **30% Wants**: Designate 30% of your income to discretionary spending or \"wants.\" This can include dining out, entertainment, vacations, hobbies, and any other non-essential expenses that enhance your lifestyle.\n\n3. **20% Savings**: Finally, set aside 20% of your income for savings. This could be for retirement accounts, an emergency fund, or other savings goals. The aim is to build financial security and plan for the future.\n\n### Example:\nIf your monthly take-home pay is $3,000:\n- **Needs**: $1,500 (50% of $3,000)\n- **Wants**: $900 (30% of $3,000)\n- **Savings**: $600 (20% of $3,000)\n\nThis rule helps create a balanced budget that allows for both essential living expenses and personal enjoyment, while also ensuring you're saving for the future. It's a great starting point, but remember to adjust the percentages based on your personal financial situation and goals!",
       "contexts": [
-        "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds...",
-        "these differences exist? Are there \ndifferent interest rates for different \nkinds of loans?\nLearn About\nLearn About\nYou may also lend money to a company or gov-\nernment by buying \u201cbonds\u201d that they iss...",
-        "overall stock market has averaged 12% growth per year over the long haul. \n \nThere are many ways to invest money, and all of them involve the risk-return tradeoff. You \nwill get paid a higher rate of ...",
-        "government insured, pay about 3-5% APY \nCorporate Bonds \nnot insured, pay about 3-6% APY \nStocks \nnot insured, can grow lots or lose lots \nMutual Funds \nnot insured, can average 12% growth if buy and ...",
-        "a 6% bond, and the interest rate generally offered \non new bonds is 4%, then your bond becomes \nmore valuable. Someone looking to buy a bond will \nbe able to get a higher return from your bond than \na..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "\uf0b7 Stocks have market risk because the companies can go down in value or go out of business. \n\uf0b7 Savings accounts have inflation risk because prices may rise faster than the interest rate paid. \n\uf0b7 Bonds..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "these differences exist? Are there \ndifferent interest rates for different \nkinds of loans?\nLearn About\nLearn About\nYou may also lend money to a company or gov-\nernment by buying \u201cbonds\u201d that they iss..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "overall stock market has averaged 12% growth per year over the long haul. \n \nThere are many ways to invest money, and all of them involve the risk-return tradeoff. You \nwill get paid a higher rate of ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "government insured, pay about 3-5% APY \nCorporate Bonds \nnot insured, pay about 3-6% APY \nStocks \nnot insured, can grow lots or lose lots \nMutual Funds \nnot insured, can average 12% growth if buy and ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "a 6% bond, and the interest rate generally offered \non new bonds is 4%, then your bond becomes \nmore valuable. Someone looking to buy a bond will \nbe able to get a higher return from your bond than \na..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "How do taxes differ between a traditional IRA and a Roth IRA, and when might each be preferable?",
-      "expected_answer": "Traditional IRA defers taxes until withdrawal, good if future income is lower; Roth IRA taxes contributions now, ideal if expecting higher future income.",
-      "actual_answer": "Great question! Understanding the tax differences between a traditional IRA and a Roth IRA is crucial for making informed retirement planning decisions. Here's a breakdown:\n\n### Traditional IRA:\n- **Tax Treatment**: Contributions to a traditional IRA may be tax-deductible in the year you make them, which can lower your taxable income for that year. However, when you withdraw funds in retirement (after age 59 \u00bd), those withdrawals are taxed as ordinary income.\n- **When to Prefer**: A traditional IRA might be preferable if you expect to be in a lower tax bracket during retirement than you are now. For example, if you are currently in your peak earning years and anticipate a lower income after retiring, deferring taxes until withdrawal can be beneficial.\n\n### Roth IRA:\n- **Tax Treatment**: Contributions to a Roth IRA are made with after-tax dollars, meaning you do not get a tax deduction when you contribute. However, the major benefit is that when you withdraw money in retirement, both contributions and earnings are tax-free, provided you meet certain conditions.\n- **When to Prefer**: A Roth IRA is often the better choice if you believe your tax rate will be higher in retirement or if you want tax-free income in the future. It can also be advantageous for younger individuals who are currently in a lower tax bracket and want to lock in their tax rate.\n\n### Summary:\n- **Traditional IRA**: Tax-deductible contributions now, taxed on withdrawal. Best if you expect lower taxes in retirement.\n- **Roth IRA**: No tax deduction now, tax-free withdrawals later. Best if you expect higher taxes in retirement or want tax-free income.\n\nChoosing between the two depends on your current tax situation, your expected future income, and your overall retirement strategy. Consider consulting with a financial advisor for personalized advice!",
-      "contexts": [
-        "the years. \nIndividual Retirement Accounts (IRA and ROTH IRA) \nAnyone can open one of these at a bank or brokerage. You put money in and it grows tax-free \nuntil you start to take it at retirement (af...",
-        "save for their retirement tax ef\ufb01ciently \u2013 when the money is \nwithdrawn from the RRSP, it is anticipated that the recipient is \nsubject to lower tax rates than they were while working. \nThere are othe...",
-        "Here are a few of the more common investment routes to consider: \nTAX FREE SAVINGS ACCOUNT (TFSA) \n\uf02a Earn income from investments without paying tax on that income, even when it\u2019s \nwithdrawn \n\uf02a Invest...",
-        "RRSP at any time. But those funds taken out of the \nplan will be taxable as income.  \nThe Sale Of Assets \nAssets that you get over the course of your life may \nbe (a) assets you will always hold on to...",
-        "home about what has been learned \nabout borrowing money and \nmanaging debt. Did people in your \nfamily get a good education about \nborrowing money and managing \ndebt? Do they have insights, advice, \na..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "the years. \nIndividual Retirement Accounts (IRA and ROTH IRA) \nAnyone can open one of these at a bank or brokerage. You put money in and it grows tax-free \nuntil you start to take it at retirement (af..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "save for their retirement tax ef\ufb01ciently \u2013 when the money is \nwithdrawn from the RRSP, it is anticipated that the recipient is \nsubject to lower tax rates than they were while working. \nThere are othe..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Here are a few of the more common investment routes to consider: \nTAX FREE SAVINGS ACCOUNT (TFSA) \n\uf02a Earn income from investments without paying tax on that income, even when it\u2019s \nwithdrawn \n\uf02a Invest..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "RRSP at any time. But those funds taken out of the \nplan will be taxable as income.  \nThe Sale Of Assets \nAssets that you get over the course of your life may \nbe (a) assets you will always hold on to..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "home about what has been learned \nabout borrowing money and \nmanaging debt. Did people in your \nfamily get a good education about \nborrowing money and managing \ndebt? Do they have insights, advice, \na..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "Why might an investor use dollar-cost averaging, and how does it reduce emotional bias?",
-      "expected_answer": "It invests a fixed amount regularly regardless of market conditions, smoothing entry prices and reducing the temptation to time the market.",
-      "actual_answer": "Dollar-cost averaging (DCA) is a strategy where an investor invests a fixed amount of money at regular intervals, regardless of the share price. There are several reasons why an investor might choose to use this method:\n\n1. **Reduces Market Timing Risk**: By investing consistently over time, DCA helps to mitigate the risk of making poor investment decisions based on trying to time the market. Instead of worrying about whether the price is high or low on a particular day, the investor spreads their investment out, which can lead to a more favorable average purchase price.\n\n2. **Encourages Consistent Investing**: DCA promotes a disciplined investment approach. By committing to invest the same amount regularly (like a portion of your paycheck), investors are more likely to stay committed to their investment goals.\n\n3. **Lessens Emotional Bias**: Emotions can heavily influence investment decisions. Investors often react to market fluctuations with fear or greed\u2014selling in a panic during downturns or chasing after 'hot' stocks without thorough analysis. By using DCA, the investor is less likely to be swayed by these emotions. Since they are investing regularly, they are less focused on daily market movements, which helps them avoid impulsive decisions.\n\n4. **Buying More Shares at Lower Prices**: As demonstrated in the example provided, when prices are low, the fixed investment amount buys more shares, while fewer shares are purchased when prices are high. Over time, this can lead to a lower average cost per share, potentially increasing overall returns when the market rebounds.\n\nIn summary, dollar-cost averaging helps investors maintain a consistent investment strategy, reduces the impact of emotional decision-making, and can lead to better long-term outcomes. It's a practical approach that aligns well with the principle that \"slow and steady wins the race.\"",
-      "contexts": [
-        "that is likely to pull back down. With fear, they sell too quickly in response to problems, and by \nthe time they sell, the price has already gone down, so they sell for a loss. Buying at high prices ...",
-        "Here\u2019s an example of how it works: if you decided to invest your $1200 tax refund in a no-load \nmutual fund, you could put all $1200 in today and buy shares at today\u2019s price ($10 per share = \n120 shar...",
-        "and fewer shares when the price is high. After one year, you have bought 171.7 shares, not 120. \n \nDiversified stock mutual funds (like no-load index funds) have consistently risen over time if \nyou a...",
-        "Prices in the financial markets go up and down as investors buy or sell different stocks, bonds, or \nmutual funds. The ideal situation is to buy at a low price and later sell when the price has risen....",
-        "Those who held on, and didn\u2019t panic,in many cases, \ngot their money back. So avoid panic.Be careful \nabout making quick decisions if things startto go a \nlittle crazy. That is also when an advisor can..."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "that is likely to pull back down. With fear, they sell too quickly in response to problems, and by \nthe time they sell, the price has already gone down, so they sell for a loss. Buying at high prices ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Here\u2019s an example of how it works: if you decided to invest your $1200 tax refund in a no-load \nmutual fund, you could put all $1200 in today and buy shares at today\u2019s price ($10 per share = \n120 shar..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "and fewer shares when the price is high. After one year, you have bought 171.7 shares, not 120. \n \nDiversified stock mutual funds (like no-load index funds) have consistently risen over time if \nyou a..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Prices in the financial markets go up and down as investors buy or sell different stocks, bonds, or \nmutual funds. The ideal situation is to buy at a low price and later sell when the price has risen...."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Those who held on, and didn\u2019t panic,in many cases, \ngot their money back. So avoid panic.Be careful \nabout making quick decisions if things startto go a \nlittle crazy. That is also when an advisor can..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "Compare the 50/30/20 budgeting rule with zero-based budgeting\u2014which is better for someone with irregular income?",
-      "expected_answer": "Zero-based budgeting is better for irregular income as it accounts for every dollar monthly; 50/30/20 works best with stable, predictable paychecks.",
-      "actual_answer": "Both the 50/30/20 budgeting rule and zero-based budgeting are effective methods for managing finances, but they serve different purposes and can be more suitable depending on individual circumstances, especially for someone with irregular income.\n\n### 50/30/20 Budgeting Rule:\n- **Structure**: This rule suggests allocating 50% of your income to needs (essential expenses), 30% to wants (discretionary spending), and 20% to savings and debt repayment.\n- **Flexibility**: It offers a simple framework that can be easier to follow. If your income fluctuates, you can adjust the percentages slightly based on your earnings for the month.\n- **Best For**: Individuals who prefer a more straightforward approach and have a consistent pattern in their expenses, even if income isn\u2019t steady.\n\n### Zero-Based Budgeting:\n- **Structure**: In this method, every dollar of your income is allocated to specific expenses, savings, or debt repayment, so your budget 'zeros out' at the end of the month. You account for every dollar you make, ensuring that you don't spend more than you earn.\n- **Adaptability**: It requires you to review and adjust your budget regularly, making it a hands-on approach. This can be particularly useful for those with irregular income, as you can allocate funds based on your actual income for that month.\n- **Best For**: Individuals who are disciplined with tracking their spending and want to ensure every dollar is working towards their financial goals, especially when income varies.\n\n### Which is Better for Irregular Income?\nFor someone with irregular income, **zero-based budgeting** may be more beneficial. It allows for close monitoring of cash flow and lets you allocate funds based on what you actually earn each month. This flexibility can help ensure that you cover your essential expenses first and save effectively, even when income fluctuates.\n\n### Practical Tip:\nIf you choose zero-based budgeting, create a list of your essential expenses, and prioritize these when your income varies. Additionally, review your budget regularly (e.g., monthly) to adjust for changes in income and expenses. \n\nUltimately, the best approach depends on your personal preference and financial habits, but adapting your strategy to fit your income situation will help you stay on track.",
-      "contexts": [
-        "If you can, use your budget to pay yourself \ufb01rst. If you pay yourself last, \nit often ends up that there is nothing left. Put some of your money in \nsavings when you get it and budget how you will use...",
         "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b...",
-        "much as you would like \u2013 or need to?\nGoing through this exercise \u2013 seeing where your \nmoney is going \u2013 and thinking about where you want \nit to go \u2013 should tell you pretty clearly if you need to \nbudg...",
-        "something each month? Spending all you make? Running short each month? \nHow About You?\n117\nMODULE 9\nRemember though, this is a sample budget. Build your own \u2013 one that \nwill help you. Regardless of th...",
-        "to keep track of where your money is going and to \nmake sure your money is being used wisely.\n2. Fixed Costs: the costs that come up on a regular \nbasis that you have to pay each month.\n3. Irregular C..."
+        "$ \nOther: \n$ \nOther: \n$ \nEDUCATION \nTuition \n$ \nBooks \n$ \nProfessional Development \n$ \nOther: \n$ \n \nTOTAL FLEXIBLE EXPENSES (D) = \n(add all monthly flexible expense amounts) \n \n$ \n \nCalculate and Adju...",
+        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ...",
+        "9 \nStaying on Budget \n \nMaking a budget is easy; sticking to that budget is where the real challenge lies. Here are a few \nthings to consider that will help you be successful with your budget: \n1. Be ...",
+        "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 4 \nCASH FLOW CHART: FOR WHEN YOU HAVE TO LIVE CHECK - TO - CHECK \nList each pay date and which monthly expenses you\u2019ll use that check for. Y..."
       ],
       "sources": [
         {
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
-          "text": "If you can, use your budget to pay yourself \ufb01rst. If you pay yourself last, \nit often ends up that there is nothing left. Put some of your money in \nsavings when you get it and budget how you will use..."
+          "text": "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "$ \nOther: \n$ \nOther: \n$ \nEDUCATION \nTuition \n$ \nBooks \n$ \nProfessional Development \n$ \nOther: \n$ \n \nTOTAL FLEXIBLE EXPENSES (D) = \n(add all monthly flexible expense amounts) \n \n$ \n \nCalculate and Adju..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 5 \nWEEKLY SPENDING TRACKER \nEach day for four weeks, write down what you spent money on and how much you spent. Use the spending categories ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "9 \nStaying on Budget \n \nMaking a budget is easy; sticking to that budget is where the real challenge lies. Here are a few \nthings to consider that will help you be successful with your budget: \n1. Be ..."
+        },
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "Four Cornerstones of Financial Literacy \u2013 Version I.3 \nPage 4 \nCASH FLOW CHART: FOR WHEN YOU HAVE TO LIVE CHECK - TO - CHECK \nList each pay date and which monthly expenses you\u2019ll use that check for. Y..."
+        }
+      ],
+      "metrics": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 1.0,
+        "context_precision": 0.0,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "query": "Why do I need an emergency fund?",
+      "expected_answer": "An emergency fund provides financial security for unexpected expenses",
+      "actual_answer": "An emergency fund is essential for several reasons:\n\n1. **Financial Security**: It provides a safety net during unexpected situations, such as job loss, medical emergencies, or urgent home repairs. This peace of mind allows you to navigate financial challenges without added stress.\n\n2. **Avoiding Debt**: When emergencies arise, having funds set aside means you won't have to rely on credit cards or loans, which can lead to high-interest debt. An emergency fund helps you manage these situations without incurring additional financial burdens.\n\n3. **Stability in Budgeting**: Knowing you have an emergency fund allows you to stick to your budget more comfortably. You can allocate funds for savings and flexible expenses without worrying about unplanned costs disrupting your financial plans.\n\n4. **Building Good Financial Habits**: Establishing an emergency fund encourages disciplined saving habits, which can lead to better overall financial management in other areas of your life.\n\nMost experts recommend saving three to six months' worth of essential expenses in your emergency fund. If that seems daunting, start with a smaller goal, like $500, and gradually build from there. This fund should be kept in a separate account that is easily accessible when needed.\n\nIn summary, having an emergency fund is a critical step toward achieving financial stability and security. It prepares you for the unexpected and helps you maintain control of your finances.",
+      "contexts": [
+        "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it...",
+        "your budget and reallocate funds from other categories to make up for this need. \nReevaluate your budget every 3-6 months, or as the need arises. \n \n3. Surround yourself with people who respect your b...",
+        "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi...",
+        "There are THREE SIMPLE STEPS to help you start saving: \n1) ESTABLISH AND EMERGENCY FUND. In doing so, you\u2019re protecting your soon-to-be \nsavings from being tapped into if an emergency or unexpected co...",
+        "manage your money, PrimeBank o\ufb00ers tools and guidance to help you move forward. We \nsupport your goals with services that are clear, competitive, and community-driven.\nYou can also download free resou..."
+      ],
+      "sources": [
+        {
+          "source": "unknown",
+          "chunk_id": 0,
+          "score": 0.0,
+          "text": "savings contributions required. \n \nSTEP 4: EMERGENCY FUND \nBuilding and maintaining an EMERGENCY FUND is a necessity to feeling financially secure. Your \nemergency fund differs from savings in that it..."
         },
         {
           "source": "unknown",
@@ -540,69 +140,19 @@
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
-          "text": "much as you would like \u2013 or need to?\nGoing through this exercise \u2013 seeing where your \nmoney is going \u2013 and thinking about where you want \nit to go \u2013 should tell you pretty clearly if you need to \nbudg..."
+          "text": "making it easy to grow your emergency fund.\nProtect What Matters\nInsurance and basic estate planning are key to safeguarding your future. Health and life \ninsurance can protect your \ufb01nances in a crisi..."
         },
         {
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
-          "text": "something each month? Spending all you make? Running short each month? \nHow About You?\n117\nMODULE 9\nRemember though, this is a sample budget. Build your own \u2013 one that \nwill help you. Regardless of th..."
+          "text": "There are THREE SIMPLE STEPS to help you start saving: \n1) ESTABLISH AND EMERGENCY FUND. In doing so, you\u2019re protecting your soon-to-be \nsavings from being tapped into if an emergency or unexpected co..."
         },
         {
           "source": "unknown",
           "chunk_id": 0,
           "score": 0.0,
-          "text": "to keep track of where your money is going and to \nmake sure your money is being used wisely.\n2. Fixed Costs: the costs that come up on a regular \nbasis that you have to pay each month.\n3. Irregular C..."
-        }
-      ],
-      "metrics": {
-        "faithfulness": 0.0,
-        "answer_relevancy": 1.0,
-        "context_precision": 0.0,
-        "context_recall": 0.0
-      }
-    },
-    {
-      "query": "How does paying off high-interest debt compare to building an emergency fund when you have limited income?",
-      "expected_answer": "Build a small emergency fund first (e.g., $1,000), then focus on high-interest debt to avoid costly interest while maintaining a safety net.",
-      "actual_answer": "When you have limited income, deciding between paying off high-interest debt and building an emergency fund can be challenging, but it's important to approach this thoughtfully.\n\n1. **High-Interest Debt**: High-interest debts, such as credit cards, can quickly accumulate interest, making your overall debt grow larger over time. Prioritizing the repayment of these debts is usually recommended because they can consume a significant portion of your income with interest payments. By paying down high-interest debt first, you reduce the total amount you owe and free up more money in the long run that can be redirected toward savings.\n\n2. **Emergency Fund**: An emergency fund is crucial as it provides a financial safety net for unexpected expenses (like medical bills or car repairs) without needing to rely on credit. A common recommendation is to aim for at least three to six months' worth of living expenses in your emergency fund. However, when income is tight, it can feel daunting to save this amount while managing debt.\n\n### Suggested Approach:\n- **Start Small**: If your debt situation is manageable, consider setting aside a small amount (like $500 to $1,000) for an emergency fund. This can help you handle unexpected expenses without incurring more debt.\n- **Prioritize High-Interest Debt**: Focus primarily on paying down high-interest debts. You can use methods like the snowball (paying off the smallest debts first for motivation) or the avalanche (paying off the highest-interest debts first to save on interest) method to structure your repayments.\n- **Balance Both Goals**: If possible, allocate a portion of your budget to both debt repayment and savings. For example, you could dedicate a higher percentage toward debt repayment while still contributing a smaller amount to your emergency fund.\n\n### Example:\nImagine you have $300 left for discretionary spending each month after bills. You might decide to allocate $200 to pay off high-interest debt and $100 to your emergency fund. This way, you're making progress on both fronts.\n\nUltimately, the decision should align with your personal financial situation and comfort level. If you find yourself frequently needing to rely on credit for emergencies, building that fund may take precedence. Conversely, if your debt is overwhelming, focusing on paying it down may relieve stress and improve your financial health more quickly.",
-      "contexts": [
-        "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi...",
-        "Avoid the mindset of only saving \u201cwhat\u2019s left over\u201d \nonce your bills are paid. Determine what your \nsavings goal is, and actively put the appropriate \namount of money towards that each pay. If you\u2019re ...",
-        "if it\u2019s a paid-off car). \n \n4. Then pay your secured debts (car loan) so it will not be repossessed. If you have a good \npayment history, ask the lender if you can skip a month or tack a month onto en...",
-        "making minimum payments on the rest. Once the smallest is gone, roll that \npayment into the next smallest.\n\u2022 \nCard A: $500 @ 15%\n\u2022 \nCard B: $1,200 @ 18%\n\u2022 \nCard C: $2,000 @ 22%\nStart with Card A, then...",
-        "Improving Your Debt - to -Income Ratio ........................................................ 15 \nPrioritize Your Debts ................................................................................."
-      ],
-      "sources": [
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "interest debts, such as your mortgage or student \nloan, evaluate if it\u2019s more important to you at this \ntime to pay those debts down or build your \nsavings. If saving is more important for you, \nconsi..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Avoid the mindset of only saving \u201cwhat\u2019s left over\u201d \nonce your bills are paid. Determine what your \nsavings goal is, and actively put the appropriate \namount of money towards that each pay. If you\u2019re ..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "if it\u2019s a paid-off car). \n \n4. Then pay your secured debts (car loan) so it will not be repossessed. If you have a good \npayment history, ask the lender if you can skip a month or tack a month onto en..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "making minimum payments on the rest. Once the smallest is gone, roll that \npayment into the next smallest.\n\u2022 \nCard A: $500 @ 15%\n\u2022 \nCard B: $1,200 @ 18%\n\u2022 \nCard C: $2,000 @ 22%\nStart with Card A, then..."
-        },
-        {
-          "source": "unknown",
-          "chunk_id": 0,
-          "score": 0.0,
-          "text": "Improving Your Debt - to -Income Ratio ........................................................ 15 \nPrioritize Your Debts ................................................................................."
+          "text": "manage your money, PrimeBank o\ufb00ers tools and guidance to help you move forward. We \nsupport your goals with services that are clear, competitive, and community-driven.\nYou can also download free resou..."
         }
       ],
       "metrics": {
