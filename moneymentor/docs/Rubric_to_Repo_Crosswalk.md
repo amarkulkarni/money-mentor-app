@@ -136,10 +136,10 @@ def get_finance_answer(query: str, k: int = 5, mode: str = "base"):
 
 | Retriever | File | Status | Performance |
 |-----------|------|--------|-------------|
-| **Base (Similarity Search)** | `rag_pipeline.py` Lines 330-345 | ✅ Baseline | Faithfulness: 0.171 |
+| **Base (Similarity Search)** | `rag_pipeline.py` Lines 330-345 | ✅ Production | Faithfulness: 0.156 (simple) / 0.138 (reasoning) |
 | **MultiQuery** | `rag_pipeline.py` Lines 385-410 (deprecated) | 🔄 Tested | No improvement |
 | **MultiQuery + Compression** | `rag_pipeline.py` Lines 385-430 (deprecated) | 🔄 Tested | Introduced failures |
-| **Hybrid (BM25 + Vector) + Cohere Reranking** | `retrievers/hybrid_rerank_retriever.py` | ✅ Production | Faithfulness: 0.156 (+1.1% on reasoning) |
+| **Hybrid (BM25 + Vector Ensemble)** | `retrievers/hybrid_rerank_retriever.py` | ⚠️ Tested | Faithfulness: 0.162 (simple) / 0.137 (reasoning) - No consistent improvement. Note: Cohere reranking failed. |
 
 **Hybrid + Reranking Details:**
 
@@ -292,33 +292,34 @@ Generate comparison charts
 
 | Retriever | Faithfulness | Relevancy | Precision | Recall |
 |-----------|--------------|-----------|-----------|--------|
-| Base | 0.171 | 0.231 | 0.039 | 0.067 |
-| Hybrid+Rerank | 0.157 | 0.224 | 0.039 | 0.067 |
-| **Δ Change** | **-1.3%** | **-0.6%** | **0.0%** | **0.0%** |
+| Base | 0.156 | 0.232 | 0.039 | 0.067 |
+| Hybrid (Ensemble) | 0.162 | 0.227 | 0.039 | 0.067 |
+| **Δ Change** | **+0.6%** | **-0.5%** | **0.0%** | **0.0%** |
 
 **Reasoning Dataset (12 queries):**
 
 | Retriever | Faithfulness | Relevancy | Precision | Recall |
 |-----------|--------------|-----------|-----------|--------|
-| Base | 0.145 | 0.230 | 0.023 | 0.048 |
-| Hybrid+Rerank | 0.156 | 0.241 | 0.023 | 0.048 |
-| **Δ Change** | **+1.1%** | **+1.1%** | **0.0%** | **0.0%** |
+| Base | 0.138 | 0.226 | 0.023 | 0.048 |
+| Hybrid (Ensemble) | 0.137 | 0.232 | 0.023 | 0.048 |
+| **Δ Change** | **-0.1%** | **+0.6%** | **0.0%** | **0.0%** |
 
 **Key Findings:**
-1. ✅ **Simple queries**: No improvement needed (base is sufficient)
-2. ✅ **Complex queries**: +1.1% improvement with Hybrid+Rerank
-3. ✅ **0 failures** across all 54 evaluations (27 queries × 2 retrievers)
-4. ✅ **Qualitative improvements**: Better multi-source synthesis (not captured by metrics)
+1. ⚠️ **No consistent improvement**: Hybrid gains are minimal (<1%) and inconsistent
+2. ⚠️ **Simple queries**: +0.6% faith but -0.5% relevancy (no net gain)
+3. ⚠️ **Complex queries**: -0.1% faith but +0.6% relevancy (no net gain)
+4. ✅ **0 failures** across all 54 evaluations (27 queries × 2 retrievers)
+5. ❌ **Cohere reranking failed** - Full Hybrid+Rerank pipeline not tested
 
 **Cost-Benefit Analysis:**
 
-| Aspect | Base | Hybrid+Rerank | Conclusion |
-|--------|------|---------------|------------|
-| **Latency** | ~1.5s | ~2.5s | Acceptable trade-off |
-| **Cost per query** | $0.002 | $0.004 | 2x increase, still low |
-| **Quality (simple)** | 0.171 | 0.157 | No improvement |
-| **Quality (reasoning)** | 0.145 | 0.156 | +1.1% improvement |
-| **Recommendation** | Default | Enable for complex queries | Conditional routing |
+| Aspect | Base | Hybrid (Ensemble) | Conclusion |
+|--------|------|-------------------|------------|
+| **Latency** | ~1.5s | ~2.5s | Slower without benefit |
+| **Cost per query** | $0.002 | $0.004 | 2x increase for no gain |
+| **Quality (simple)** | 0.156 | 0.162 | +0.6% faith, -0.5% rel (no net gain) |
+| **Quality (reasoning)** | 0.138 | 0.137 | -0.1% faith, +0.6% rel (no net gain) |
+| **Recommendation** | ✅ Use for production | ⚠️ No clear advantage | Base is sufficient |
 
 **Visual Evidence:**
 - ✅ Charts: [docs/images/semantic_eval_simple.png](./images/semantic_eval_simple.png)
